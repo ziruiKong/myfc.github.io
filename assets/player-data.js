@@ -7,7 +7,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "GKP",
     "nationality": "Italy",
     "flag": "assets/it_1x1.svg",
-    "photo": "assets/guglielmo-vicario.png",
+    "photo": "assets/guglielmo-vicario.webp",
     "age": "29",
     "stats": {
       "appearances": 54,
@@ -63,7 +63,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "Netherlands",
     "flag": "assets/nl_1x1.svg",
-    "photo": "assets/sven-botman.png",
+    "photo": "assets/sven-botman.webp",
     "age": "26",
     "stats": {
       "appearances": 43,
@@ -99,7 +99,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
-    "photo": "assets/ben-white.png",
+    "photo": "assets/ben-white.webp",
     "age": "28",
     "stats": {
       "appearances": 54,
@@ -155,7 +155,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
-    "photo": "assets/tino-livramento.png",
+    "photo": "assets/tino-livramento.webp",
     "age": "24",
     "stats": {
       "appearances": 58,
@@ -211,7 +211,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/pau-cubarsi.png",
+    "photo": "assets/pau-cubarsi.webp",
     "age": "20",
     "stats": {
       "appearances": 42,
@@ -247,7 +247,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Mexico",
     "flag": "assets/mx_1x1.svg",
-    "photo": "assets/marcel-ruiz.png",
+    "photo": "assets/marcel-ruiz.webp",
     "age": "26",
     "stats": {
       "appearances": 46,
@@ -303,7 +303,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/alex-baena.png",
+    "photo": "assets/alex-baena.webp",
     "age": "25",
     "stats": {
       "appearances": 58,
@@ -359,7 +359,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Argentina",
     "flag": "assets/ar_1x1.svg",
-    "photo": "assets/nico-paz.png",
+    "photo": "assets/nico-paz.webp",
     "age": "22",
     "stats": {
       "appearances": 56,
@@ -415,7 +415,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "FWD",
     "nationality": "Egypt",
     "flag": "assets/eg_1x1.svg",
-    "photo": "assets/omar-marmoush.png",
+    "photo": "assets/omar-marmoush.webp",
     "age": "28",
     "stats": {
       "appearances": 54,
@@ -461,7 +461,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "FWD",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/ferran-torres.png",
+    "photo": "assets/ferran-torres.webp",
     "age": "27",
     "stats": {
       "appearances": 55,
@@ -497,7 +497,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "FWD",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/jesus-rodriguez.png",
+    "photo": "assets/jesus-rodriguez.webp",
     "age": "21",
     "stats": {
       "appearances": 17,
@@ -543,7 +543,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/jose-carmona.png",
+    "photo": "assets/jose-carmona.webp",
     "age": "25",
     "stats": {
       "appearances": 40,
@@ -579,7 +579,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "Croatia",
     "flag": "assets/hr_1x1.svg",
-    "photo": "assets/luka-vuskovic.png?v=2",
+    "photo": "assets/luka-vuskovic.webp?v=2",
     "age": "20",
     "stats": {
       "appearances": 24,
@@ -615,7 +615,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "FWD",
     "nationality": "Croatia",
     "flag": "assets/hr_1x1.svg",
-    "photo": "assets/toni-fruk.png",
+    "photo": "assets/toni-fruk.webp",
     "age": "26",
     "stats": {
       "appearances": 33,
@@ -671,7 +671,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/marc-bernal.png",
+    "photo": "assets/marc-bernal.webp",
     "age": "20",
     "stats": {
       "appearances": 0,
@@ -698,7 +698,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
-    "photo": "assets/archie-gray.png",
+    "photo": "assets/archie-gray.webp",
     "age": "21",
     "stats": {
       "appearances": 0,
@@ -725,7 +725,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Sweden",
     "flag": "assets/se_circle.svg",
-    "photo": "assets/lucas-bergvall.png?v=2",
+    "photo": "assets/lucas-bergvall.webp?v=2",
     "age": "21",
     "stats": {
       "appearances": 51,
@@ -781,7 +781,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Mexico",
     "flag": "assets/mx_1x1.svg",
-    "photo": "assets/gilberto-mora.png",
+    "photo": "assets/gilberto-mora.webp",
     "age": "19",
     "stats": {
       "appearances": 0,
@@ -835,7 +835,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "FWD",
     "nationality": "Greece",
     "flag": "assets/gr_1x1.svg",
-    "photo": "assets/charalampos-kostoulas.png",
+    "photo": "assets/charalampos-kostoulas.webp",
     "age": "20",
     "stats": {
       "appearances": 0,
@@ -862,7 +862,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Italy",
     "flag": "assets/it_1x1.svg",
-    "photo": "assets/jacopo-fazzini.png",
+    "photo": "assets/jacopo-fazzini.webp",
     "age": "24",
     "stats": {
       "appearances": 33,
@@ -908,7 +908,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "FWD",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/antonito-cordero.png",
+    "photo": "assets/antonito-cordero.webp",
     "age": "22",
     "stats": {
       "appearances": 23,
@@ -941,7 +941,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/alex-valle.png",
+    "photo": "assets/alex-valle.webp",
     "age": "23",
     "stats": {
       "appearances": 23,
@@ -974,7 +974,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Argentina",
     "flag": "assets/ar_1x1.svg",
-    "photo": "assets/maximo-perrone.png?v=2",
+    "photo": "assets/maximo-perrone.webp?v=2",
     "age": "24",
     "stats": {
       "appearances": 40,
@@ -1030,7 +1030,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "Germany",
     "flag": "assets/de_1x1.svg",
-    "photo": "assets/elias-baum.png",
+    "photo": "assets/elias-baum.webp",
     "age": "21",
     "stats": {
       "appearances": 0,
@@ -1056,7 +1056,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
-    "photo": "assets/victor-gonzalez.png?v=3",
+    "photo": "assets/victor-gonzalez.webp?v=3",
     "age": "22",
     "stats": {
       "appearances": 0,
@@ -1083,7 +1083,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "FWD",
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
-    "photo": "assets/tyler-dibling.png",
+    "photo": "assets/tyler-dibling.webp",
     "age": "24",
     "stats": {
       "appearances": 22,
@@ -1119,7 +1119,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "DEF",
     "nationality": "Italy",
     "flag": "assets/it_1x1.svg",
-    "photo": "assets/riccardo-calafiori.png",
+    "photo": "assets/riccardo-calafiori.webp",
     "age": "25",
     "stats": {
       "appearances": 57,
@@ -1165,7 +1165,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "MID",
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
-    "photo": "assets/martin-zubimendi.png",
+    "photo": "assets/martin-zubimendi.webp",
     "age": "28",
     "stats": {
       "appearances": 46,
@@ -1201,7 +1201,7 @@ window.TOPS_PLAYER_DATA = [
     "positionShort": "GKP",
     "nationality": "Turkey",
     "flag": "assets/tr_1x1.svg",
-    "photo": "assets/berke-ozer.png?v=3",
+    "photo": "assets/berke-ozer.webp?v=3",
     "age": "27",
     "stats": {
       "appearances": 13,

@@ -27,7 +27,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/mx_1x1.svg",
-    "photo": "assets/luis-malagon.png"
+    "photo": "assets/luis-malagon.webp"
   },
   {
     "id": "marcos-senesi",
@@ -57,7 +57,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/ar_1x1.svg",
-    "photo": "assets/marcos-senesi.png"
+    "photo": "assets/marcos-senesi.webp"
   },
   {
     "id": "david-affengruber",
@@ -100,7 +100,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
     ],
     "specificPosition": "CB",
     "flag": "assets/at_1x1.svg",
-    "photo": "assets/david-affengruber.png"
+    "photo": "assets/david-affengruber.webp"
   },
   {
     "id": "dara-oshea",
@@ -130,7 +130,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/ie_1x1.svg",
-    "photo": "assets/dara-oshea.png"
+    "photo": "assets/dara-oshea.webp"
   },
   {
     "id": "jack-clarke",
@@ -160,7 +160,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/gb-eng.svg",
-    "photo": "assets/jack-clarke.png"
+    "photo": "assets/jack-clarke.webp"
   },
   {
     "id": "harry-wilson",
@@ -190,7 +190,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/gb-wls.svg",
-    "photo": "assets/harry-wilson.png"
+    "photo": "assets/harry-wilson.webp"
   },
   {
     "id": "jacob-greaves",
@@ -233,7 +233,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
     ],
     "specificPosition": "CB",
     "flag": "assets/gb-eng.svg",
-    "photo": "assets/jacob-greaves.png"
+    "photo": "assets/jacob-greaves.webp"
   },
   {
     "id": "mika-biereth",
@@ -276,7 +276,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
     ],
     "specificPosition": "ST",
     "flag": "assets/dk_1x1.svg",
-    "photo": "assets/mika-biereth.png"
+    "photo": "assets/mika-biereth.webp"
   },
   {
     "id": "leif-davis",
@@ -306,7 +306,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/gb-eng.svg",
-    "photo": "assets/leif-davis.png"
+    "photo": "assets/leif-davis.webp"
   },
   {
     "id": "cesar-montes",
@@ -336,7 +336,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/mx_1x1.svg",
-    "photo": "assets/cesar-montes.png"
+    "photo": "assets/cesar-montes.webp"
   },
   {
     "id": "diego-lainez",
@@ -366,7 +366,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/mx_1x1.svg",
-    "photo": "assets/diego-lainez.png"
+    "photo": "assets/diego-lainez.webp"
   },
   {
     "id": "costinha",
@@ -409,7 +409,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
     ],
     "specificPosition": "RB",
     "flag": "assets/pt_1x1.svg",
-    "photo": "assets/costinha.png"
+    "photo": "assets/costinha.webp"
   },
   {
     "id": "micky-van-de-ven",
@@ -442,6 +442,6 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
     ],
     "specificPosition": "CB",
     "flag": "assets/nl_1x1.svg",
-    "photo": "assets/micky-van-de-ven.png"
+    "photo": "assets/micky-van-de-ven.webp"
   }
 ];
