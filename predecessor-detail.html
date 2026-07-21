@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Club Archive | TOPS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/player-profile.css">
+</head>
+<body>
+  <aside class="rail">
+    <a class="rail-brand" href="index.html#top" aria-label="TOPS home"><span class="tops-wordmark"><img src="assets/sidebar-sculpture-logo.webp" alt="TOPS"></span></a>
+    <nav><a href="index.html#fixtures">Matches</a><a class="active" href="mens-first-team.html">Teams</a><a href="index.html#tickets">Tickets</a><a href="index.html#membership">Membership</a><a href="index.html#shop">Shop IFC</a><a href="index.html#play">IFC PLAY</a><a href="index.html#club">The Club</a><a href="index.html#latest">Explore</a></nav>
+  </aside>
+  <main class="page">
+    <article class="profile" id="player-profile" hidden></article>
+    <section class="not-found" id="player-not-found" hidden>
+      <h1>Archive Not Found</h1>
+      <p><a class="back-link" href="predecessor-players.html">Back to predecessor players</a></p>
+    </section>
+    <footer><div class="tops-pattern" aria-label="TOPS brand pattern"><div class="tops-pattern-track"><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span></div></div></footer>
+  </main>
+  <script>
+    window.TOPS_PROFILE_CONFIG = {
+      dataKey: "TOPS_PREDECESSOR_PLAYER_DATA",
+      backHref: "predecessor-players.html",
+      backLabel: "Back to predecessor players",
+      profileKind: "CLUB ARCHIVE",
+      statsTitle: "Club Archive Stats",
+      isArchive: true
+    };
+  </script>
+  <script src="assets/predecessor-player-data.js"></script>
+  <script src="assets/transfer-data.js"></script>
+  <script src="assets/player-profile.js"></script>
+</body>
+</html>

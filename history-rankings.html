@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History Rankings | TOPS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#071426;--navy:#101f3a;--burgundy:#6f1f2c;--warm:#f1ece2;--paper:#faf8f3;--line:#101f3a18;--gold:#c6a35b;--muted:#6e7f94}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--warm);color:var(--ink);font-family:"DM Sans",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .rail{position:fixed;z-index:9;inset:0 auto 0 0;width:200px;background:var(--burgundy);color:var(--warm);border-right:2px solid var(--gold);padding:0;display:flex;flex-direction:column;align-items:stretch}
+    .rail-brand{display:grid;place-items:center;width:100%;padding:42px 24px 38px;margin:0 0 40px;background:var(--navy);border-bottom:2px solid var(--gold)}.tops-wordmark{display:block;width:126px;max-width:100%;line-height:0;margin:0 auto}.tops-wordmark img{display:block;width:100%;height:auto}
+    .rail nav{display:flex;flex-direction:column;gap:18px;padding:0 24px;margin-top:0;color:var(--warm);font:700 22px/1.06 "Libre Caslon Display",Georgia,serif;letter-spacing:-.025em}
+    .rail nav a:hover,.rail nav a.active,.rail nav a.is-submenu-active{color:var(--gold)}
+    .rail-submenu{position:fixed;z-index:8;top:0;bottom:0;left:200px;width:min(620px,calc(100vw - 200px));background:#f8f5ee;color:var(--navy);border:1px solid var(--burgundy);border-left-width:2px;padding:118px 40px 42px;opacity:0;transform:translateX(-18px);pointer-events:none;transition:opacity .28s ease,transform .28s ease}
+    body.submenu-open .rail-submenu{opacity:1;transform:translateX(0);pointer-events:auto}
+    .rail-submenu-kicker{margin:0 0 30px;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy)}
+    .rail-submenu-list{margin:0;padding:0;list-style:none;border-top:1px solid #101f3a18}
+    .rail-submenu-list a{display:flex;align-items:center;justify-content:space-between;gap:34px;padding:28px 0;border-bottom:1px solid #101f3a18;font:clamp(34px,4.2vw,58px)/.95 "Libre Caslon Display",Georgia,serif;letter-spacing:-.035em}
+    .rail-submenu-list a:after{content:">";font-family:Georgia,serif;font-size:.82em;line-height:1;transition:transform .2s ease}.rail-submenu-list a:hover{color:var(--burgundy)}.rail-submenu-list a:hover:after{transform:translateX(6px)}
+    .page{margin-left:200px;min-height:100vh}
+    .team-header{position:relative;min-height:300px;padding:56px 0 0;background:linear-gradient(90deg,rgba(2,9,54,.50),rgba(2,9,54,.10)),url('assets/first-team-header.webp') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between}
+    .team-header:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,9,54,.08),rgba(2,9,54,.38));pointer-events:none}.team-heading{position:relative;z-index:1;padding:0 clamp(28px,4vw,64px) 42px}
+    h1{font:italic 800 clamp(54px,6.8vw,108px)/.82 "Libre Caslon Display",Georgia,serif;margin:0;color:#f1ece2;letter-spacing:-.055em}h1 span{display:block}
+    .tabs{--tab-radius:24px;position:relative;z-index:2;width:min(1280px,calc(100% - clamp(56px,10vw,160px)));margin:0 auto -34px;min-height:72px;background:#f8f5ee;border:1px solid #c6a35b70;border-bottom:0;border-radius:var(--tab-radius) var(--tab-radius) 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:start;padding:8px;color:var(--navy);box-shadow:0 -1px 0 #ffffffb0 inset,0 -12px 28px #02093622}
+    .tabs a{height:54px;display:grid;place-items:center;border-radius:16px;border:1px solid transparent;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.15em;text-align:center;color:var(--navy);transition:background .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease}.tabs a:hover{border-color:#6f1f2c2e;background:#efe7dc;color:var(--burgundy)}.tabs a.active{background:var(--burgundy);border-color:#c6a35b80;color:#f8f5ee;box-shadow:0 12px 22px #101f3a24}
+    .rankings{padding:88px clamp(24px,4vw,64px) 90px;background:linear-gradient(180deg,#f1ece2 0%,#f8f5ee 42%,#f1ece2 100%)}
+    .record-toolbar{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:end;background:#f8f5ee;border:1px solid #101f3a18;padding:30px;margin-bottom:24px;box-shadow:0 14px 34px #101f3a0c}
+    .record-copy p{margin:0 0 6px;color:#7b8aa0;font-size:10px;font-weight:900;letter-spacing:.22em;text-transform:uppercase}.record-copy h2{margin:0;color:var(--navy);font:900 clamp(24px,2.6vw,34px)/1 "DM Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+    .select-field{display:grid;gap:9px}.select-field span{color:#7b8aa0;font-size:10px;font-weight:900;letter-spacing:.22em;text-transform:uppercase}.select-field select{appearance:none;min-width:220px;height:48px;border:1px solid #101f3a20;background:#fffaf2;color:var(--navy);padding:0 42px 0 14px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background-image:linear-gradient(45deg,transparent 50%,var(--navy) 50%),linear-gradient(135deg,var(--navy) 50%,transparent 50%);background-position:calc(100% - 22px) 20px,calc(100% - 16px) 20px;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+    .ranking-grid{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:24px}.ranking-panel{background:#fffaf2;border:1px solid #101f3a18;min-width:0;box-shadow:0 16px 34px #101f3a10}.leader{position:relative;min-height:190px;padding:26px 28px;background:linear-gradient(115deg,var(--burgundy) 0%,#4c263f 48%,var(--navy) 100%);color:#fff;overflow:hidden}.leader:after{content:"";position:absolute;inset:16px;border:1px solid #f8f5ee24;pointer-events:none}.leader-kicker{position:relative;z-index:1;margin:0 0 34px;color:#f8f5eec8;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.leader-name{position:relative;z-index:1;max-width:66%;font:800 clamp(29px,2.7vw,42px)/.92 "Libre Caslon Display",Georgia,serif;letter-spacing:-.035em;color:#fffaf2}.leader-value{position:absolute;z-index:1;right:30px;bottom:22px;font:800 clamp(54px,4.9vw,78px)/.82 "Libre Caslon Display",Georgia,serif;letter-spacing:-.055em;color:#f8f5eef0}
+    .ranking-list{margin:0;padding:18px 26px 22px;list-style:none}.ranking-row{display:grid;grid-template-columns:32px minmax(0,1fr) 24px 92px;gap:14px;align-items:center;min-height:58px;border-bottom:1px solid #101f3a12}.ranking-row:last-child{border-bottom:0}.rank{color:var(--burgundy);font-size:12px;font-weight:900}.player-name{min-width:0;color:var(--navy);font-size:16px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rank-flag{width:22px;height:22px;justify-self:center;border-radius:999px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px #101f3a10,0 6px 12px #101f3a10}.rank-flag img{display:block;width:100%;height:100%;object-fit:cover}.score{display:flex;align-items:baseline;justify-content:flex-end;gap:8px;color:var(--navy);font-weight:900;text-align:right;white-space:nowrap}.score b{font-size:22px;min-width:28px;text-align:right}.score span{min-width:42px;color:#7b8aa0;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;text-align:left}
+    .empty-state{padding:34px 26px;color:#7b8aa0;font-weight:800}
+    footer{background:#020936;color:#f1ece2;padding:74px 0 0;overflow:hidden}.tops-pattern{overflow:hidden}.tops-pattern-track{display:flex;align-items:center;gap:76px;width:max-content;animation:topsMarquee 24s linear infinite}.tops-pattern-item{display:flex;align-items:center;gap:.16em;white-space:nowrap;color:#f1ece2;font:italic clamp(128px,13.8vw,228px)/.78 Georgia,serif;letter-spacing:-.065em;text-transform:uppercase}.tops-pattern-item img{width:.86em;height:.86em;object-fit:contain;display:block;transform:translateY(-.015em)}@keyframes topsMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @media(max-width:1280px){.ranking-grid{grid-template-columns:1fr}.leader-name{max-width:76%}}@media(max-width:900px){.record-toolbar{grid-template-columns:1fr}.select-field select{width:100%;min-width:0}}@media(max-width:760px){.rail,.rail-submenu{display:none}.page{margin-left:0}.tabs{width:calc(100% - 24px);grid-template-columns:repeat(2,1fr);border-radius:24px 24px 0 0}.rankings{padding:70px 12px}.record-toolbar{padding:22px}.ranking-list{padding:14px 16px 18px}.ranking-row{grid-template-columns:28px minmax(0,1fr) 22px 82px;gap:9px}.rank-flag{width:19px;height:19px}.score b{font-size:20px;min-width:24px}.score span{min-width:38px;font-size:10px}.leader{min-height:170px}.leader-value{font-size:52px}.player-name{font-size:14px}}
+  </style>
+</head>
+<body>
+  <aside class="rail">
+    <a class="rail-brand" href="index.html#top" aria-label="TOPS home"><span class="tops-wordmark"><img src="assets/sidebar-sculpture-logo.webp" alt="TOPS"></span></a>
+    <nav><a href="index.html#fixtures" data-menu="matches">Matches</a><a class="active" href="mens-first-team.html" data-menu="teams">Teams</a><a href="index.html#tickets" data-menu="tickets">Tickets</a><a href="index.html#membership" data-menu="membership">Membership</a><a href="index.html#shop" data-menu="shop">Shop IFC</a><a href="index.html#play" data-menu="play">IFC PLAY</a><a href="index.html#club" data-menu="club">The Club</a><a href="index.html#latest" data-menu="explore">Explore</a></nav>
+  </aside>
+  <aside class="rail-submenu" aria-hidden="true"><p class="rail-submenu-kicker">Teams</p><ul class="rail-submenu-list"></ul></aside>
+  <main class="page">
+    <header class="team-header"><div class="team-heading"><h1><span>MEN'S</span><span>FIRST TEAM</span></h1></div><nav class="tabs"><a href="mens-first-team.html#squad">Squad</a><a class="active" href="history-rankings.html">History Rankings</a><a href="squad-finance.html">Finance</a><a href="transfer-history.html">Transfers</a><a href="predecessor-players.html">Predecessor</a></nav></header>
+    <section class="rankings">
+      <div class="record-toolbar">
+        <div class="record-copy"><p>Club Records</p><h2>Goals, Assists &amp; Appearances</h2></div>
+        <label class="select-field"><span>Season</span><select data-season-filter></select></label>
+        <label class="select-field"><span>Competition</span><select data-competition-filter></select></label>
+      </div>
+      <div class="ranking-grid" data-ranking-grid></div>
+    </section>
+    <footer><div class="tops-pattern" aria-label="TOPS brand pattern"><div class="tops-pattern-track"><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span></div></div></footer>
+  </main>
+  <script src="assets/player-data.js"></script>
+  <script src="assets/predecessor-player-data.js"></script>
+  <script>
+    const currentPlayers = (window.TOPS_PLAYER_DATA || []).map((player) => ({ ...player, archiveType: "current" }));
+    const predecessorPlayers = (window.TOPS_PREDECESSOR_PLAYER_DATA || []).map((player) => ({ ...player, archiveType: "predecessor" }));
+    const playerKey = (player) => (player.id || player.name || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const statTotal = (player) => (player.seasonStats || []).reduce((sum, row) => sum + Number(row.appearances || 0) + Number(row.goals || 0) + Number(row.assists || 0), 0);
+    const preferredPlayer = (current, next) => {
+      if (!current) return next;
+      if (next.archiveType === "predecessor" && current.archiveType !== "predecessor") return next;
+      if (next.archiveType === current.archiveType && statTotal(next) > statTotal(current)) return next;
+      return current;
+    };
+    const players = [...currentPlayers, ...predecessorPlayers].reduce((map, player) => {
+      const key = playerKey(player);
+      map.set(key, preferredPlayer(map.get(key), player));
+      return map;
+    }, new Map()).values();
+    const allPlayers = [...players];
+    const seasonFilter = document.querySelector('[data-season-filter]');
+    const competitionFilter = document.querySelector('[data-competition-filter]');
+    const grid = document.querySelector('[data-ranking-grid]');
+    const metrics = [
+      { key: "goals", title: "All-Time Goals", unit: "Goals" },
+      { key: "assists", title: "All-Time Assists", unit: "Assists" },
+      { key: "appearances", title: "All-Time Appearances", unit: "Apps" }
+    ];
+    const statRowsFor = (player) => player.seasonStats?.length ? player.seasonStats : [{ season: "Unlisted", competition: "All competitions", ...player.stats }];
+    const seasons = [...new Set(allPlayers.flatMap((player) => statRowsFor(player).map((row) => row.season).filter(Boolean)))].sort().reverse();
+    const competitions = [...new Set(allPlayers.flatMap((player) => statRowsFor(player).map((row) => row.competition).filter(Boolean)))].sort();
+    const setOptions = (select, options) => {
+      select.innerHTML = options.map((item) => `<option value="${item.value}">${item.label}</option>`).join('');
+    };
+    setOptions(seasonFilter, [{ value: "all", label: "All time" }, ...seasons.map((season) => ({ value: season, label: season }))]);
+    setOptions(competitionFilter, [{ value: "all", label: "All competitions" }, ...competitions.map((competition) => ({ value: competition, label: competition }))]);
+    const detailHref = (player) => `${player.archiveType === "predecessor" ? "predecessor-detail.html" : "player-detail.html"}?id=${player.id}`;
+    const filteredRowsFor = (player) => {
+      const selectedSeason = seasonFilter.value;
+      const selectedCompetition = competitionFilter.value;
+      return statRowsFor(player).filter((row) => {
+        const seasonMatch = selectedSeason === "all" || row.season === selectedSeason;
+        const competitionMatch = selectedCompetition === "all" || row.competition === selectedCompetition;
+        return seasonMatch && competitionMatch;
+      });
+    };
+    const aggregatePlayer = (player, metric) => {
+      const value = filteredRowsFor(player).reduce((sum, row) => sum + Number(row[metric] ?? 0), 0);
+      return { player, value };
+    };
+    const buildRanking = (metric) => allPlayers
+      .map((player) => aggregatePlayer(player, metric.key))
+      .filter((entry) => entry.value > 0)
+      .sort((a, b) => b.value - a.value || a.player.name.localeCompare(b.player.name))
+      .slice(0, 12);
+    const renderPanel = (metric) => {
+      const ranking = buildRanking(metric);
+      const leader = ranking[0];
+      if (!leader) {
+        return `<article class="ranking-panel"><div class="leader"><p class="leader-kicker">${metric.title}</p><div class="leader-name">No Records</div><div class="leader-value">0</div></div><div class="empty-state">No data for this filter.</div></article>`;
+      }
+      return `
+        <article class="ranking-panel">
+          <div class="leader"><p class="leader-kicker">${metric.title}</p><div class="leader-name">${leader.player.name}</div><div class="leader-value">${leader.value}</div></div>
+          <ol class="ranking-list">
+            ${ranking.map((entry, index) => `
+              <li class="ranking-row">
+                <span class="rank">${index + 1}</span>
+                <a class="player-name" href="${detailHref(entry.player)}">${entry.player.name}</a>
+                <span class="rank-flag"><img src="${entry.player.flag}" alt="${entry.player.nationality}"></span>
+                <span class="score"><b>${entry.value}</b><span>${metric.unit}</span></span>
+              </li>
+            `).join('')}
+          </ol>
+        </article>
+      `;
+    };
+    const renderRankings = () => {
+      grid.innerHTML = metrics.map(renderPanel).join('');
+    };
+    seasonFilter.addEventListener('change', renderRankings);
+    competitionFilter.addEventListener('change', renderRankings);
+    renderRankings();
+
+    const rail = document.querySelector('.rail');
+    const railLinks = [...document.querySelectorAll('.rail nav a')];
+    const submenu = document.querySelector('.rail-submenu');
+    const submenuKicker = document.querySelector('.rail-submenu-kicker');
+    const submenuList = document.querySelector('.rail-submenu-list');
+    let submenuCloseTimer;
+    const submenuItems = {
+      matches: ['Fixtures', 'Results', 'Tables', 'Match centre', 'Borough Cup'],
+      teams: [{ label: "Men's First Team", href: 'mens-first-team.html' }, { label: "History Rankings", href: 'history-rankings.html' }, { label: "Squad Finance", href: 'squad-finance.html' }, { label: "Transfer History", href: 'transfer-history.html' }, { label: "Predecessor Players", href: 'predecessor-players.html' }, "Women's First Team", "Men's U21", "Women's U19", "Men's U18"],
+      tickets: ['Home tickets', 'Away tickets', 'Premium', 'Season tickets', 'Ticket exchange'],
+      membership: ['Join TOPS', 'Renew membership', 'Member benefits', 'Ticket access', 'Account'],
+      shop: ['Home kit', 'Away kit', 'Training wear', 'Lifestyle', 'Accessories'],
+      play: ['Live stream', 'Highlights', 'Interviews', 'Documentaries', 'Archive'],
+      club: ['History', 'Stadium', 'Community', 'Foundation', 'Contact'],
+      explore: ['Latest news', 'Gallery', 'Video', 'Features', 'Visit N5']
+    };
+    const keepSubmenuOpen = () => clearTimeout(submenuCloseTimer);
+    const closeSubmenu = () => {
+      document.body.classList.remove('submenu-open');
+      submenu.setAttribute('aria-hidden', 'true');
+      railLinks.forEach((link) => link.classList.remove('is-submenu-active'));
+    };
+    const scheduleSubmenuClose = () => {
+      clearTimeout(submenuCloseTimer);
+      submenuCloseTimer = setTimeout(closeSubmenu, 120);
+    };
+    const openSubmenu = (link) => {
+      const key = link.dataset.menu;
+      if (!key || !submenuItems[key]) return;
+      keepSubmenuOpen();
+      submenuKicker.textContent = link.textContent.trim();
+      submenuList.innerHTML = submenuItems[key].map((item) => {
+        const label = typeof item === 'string' ? item : item.label;
+        const href = typeof item === 'string' ? '#' : item.href;
+        return `<li><a href="${href}">${label}</a></li>`;
+      }).join('');
+      railLinks.forEach((item) => item.classList.toggle('is-submenu-active', item === link));
+      submenu.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('submenu-open');
+    };
+    railLinks.forEach((link) => {
+      link.addEventListener('mouseenter', () => openSubmenu(link));
+      link.addEventListener('focus', () => openSubmenu(link));
+    });
+    rail.addEventListener('mouseleave', scheduleSubmenuClose);
+    rail.addEventListener('mouseenter', keepSubmenuOpen);
+    submenu.addEventListener('mouseleave', scheduleSubmenuClose);
+    submenu.addEventListener('mouseenter', keepSubmenuOpen);
+  </script>
+</body>
+</html>

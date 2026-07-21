@@ -1,0 +1,193 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Men's First Team | TOPS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#071426;--navy:#101f3a;--burgundy:#6f1f2c;--warm:#f1ece2;--paper:#faf8f3;--line:#101f3a18;--gold:#c6a35b}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .rail{position:fixed;z-index:9;inset:0 auto 0 0;width:200px;background:var(--burgundy);color:var(--warm);border-right:2px solid var(--gold);padding:0;display:flex;flex-direction:column;align-items:stretch}
+    .rail-brand{display:grid;place-items:center;width:100%;padding:42px 24px 38px;margin:0 0 40px;background:var(--navy);border-bottom:2px solid var(--gold)}.tops-wordmark{display:block;width:126px;max-width:100%;line-height:0;margin:0 auto}.tops-wordmark img{display:block;width:100%;height:auto}
+    .rail nav{display:flex;flex-direction:column;gap:18px;padding:0 24px;margin-top:0;color:var(--warm);font:700 22px/1.06 "Libre Caslon Display",Georgia,serif;letter-spacing:-.025em}
+    .rail nav a:hover,.rail nav a.active,.rail nav a.is-submenu-active{color:var(--gold)}
+    .rail-submenu{position:fixed;z-index:8;top:0;bottom:0;left:200px;width:min(620px,calc(100vw - 200px));background:#f8f5ee;color:var(--navy);border:1px solid var(--burgundy);border-left-width:2px;padding:118px 40px 42px;opacity:0;transform:translateX(-18px);pointer-events:none;transition:opacity .28s ease,transform .28s ease}
+    body.submenu-open .rail-submenu{opacity:1;transform:translateX(0);pointer-events:auto}
+    .rail-submenu-kicker{margin:0 0 30px;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy)}
+    .rail-submenu-list{margin:0;padding:0;list-style:none;border-top:1px solid #101f3a18}
+    .rail-submenu-list a{display:flex;align-items:center;justify-content:space-between;gap:34px;padding:28px 0;border-bottom:1px solid #101f3a18;font:clamp(34px,4.2vw,58px)/.95 "Libre Caslon Display",Georgia,serif;letter-spacing:-.035em}
+    .rail-submenu-list a:after{content:">";font-family:Georgia,serif;font-size:.82em;line-height:1;transition:transform .2s ease}.rail-submenu-list a:hover{color:var(--burgundy)}.rail-submenu-list a:hover:after{transform:translateX(6px)}
+    .page{margin-left:200px;min-height:100vh;background:var(--warm)}.team-header{position:relative;min-height:360px;padding:56px 0 0;border-bottom:0;background:linear-gradient(90deg,rgba(2,9,54,.42),rgba(2,9,54,.08)),url('assets/first-team-header.webp') center/cover no-repeat;overflow:visible;display:flex;flex-direction:column;justify-content:space-between}
+    .team-header:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,9,54,.08),rgba(2,9,54,.38));pointer-events:none}
+    .team-heading{position:relative;z-index:1;padding:0 clamp(28px,4vw,64px) 42px}
+    .crumb{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--burgundy);margin:0 0 18px}
+    h1{font:italic 800 clamp(54px,6.8vw,108px)/.82 "Libre Caslon Display",Georgia,serif;margin:0;color:#f1ece2;letter-spacing:-.055em}
+    h1 span{display:block}
+    .tabs{--tab-radius:24px;position:relative;z-index:2;width:min(1280px,calc(100% - clamp(56px,10vw,160px)));margin:0 auto -34px;min-height:72px;background:#f8f5ee;border:1px solid #c6a35b70;border-bottom:0;border-radius:var(--tab-radius) var(--tab-radius) 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:start;padding:8px;color:var(--navy);box-shadow:0 -1px 0 #ffffffb0 inset,0 -12px 28px #02093622}
+    .tabs a{height:54px;display:grid;place-items:center;border-radius:16px;border:1px solid transparent;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.15em;text-align:center;color:var(--navy);transition:background .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease}
+    .tabs a:hover{border-color:#6f1f2c2e;background:#efe7dc;color:var(--burgundy)}.tabs a.active{background:var(--burgundy);border-color:#c6a35b80;color:#f8f5ee;box-shadow:0 12px 22px #101f3a24}
+    .toolbar{padding:58px clamp(28px,4vw,64px) 0;display:flex;align-items:flex-start;justify-content:flex-start;background:var(--warm)}
+    .position-filter{position:relative;width:min(360px,100%)}
+    .filter-trigger{appearance:none;width:100%;border:0;border-bottom:1px solid #101f3a36;background:transparent;color:var(--navy);padding:0 34px 12px 0;text-align:left;font-size:16px;font-weight:600;line-height:1;letter-spacing:.01em;cursor:pointer;transition:color .2s ease,border-color .2s ease}.filter-trigger:after{content:"";position:absolute;right:4px;top:0;width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s ease}.position-filter.open .filter-trigger:after{transform:translateY(5px) rotate(225deg)}.filter-trigger:hover,.position-filter.open .filter-trigger{color:var(--burgundy);border-color:var(--burgundy)}
+    .filter-menu{position:absolute;z-index:10;left:0;right:0;top:calc(100% + 10px);background:#f8f5ee;border:1px solid #101f3a18;box-shadow:0 18px 38px #101f3a16;padding:8px 0;display:none}.position-filter.open .filter-menu{display:block}.filter-option{appearance:none;width:100%;border:0;background:transparent;color:var(--navy);display:block;text-align:left;padding:13px 18px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;transition:background .2s ease,color .2s ease}.filter-option:hover,.filter-option.active{color:var(--burgundy);background:#6f1f2c0d}
+    .squad{padding:24px clamp(28px,4vw,64px) 88px;background:var(--warm)}.player-grid{display:grid;grid-template-columns:repeat(4,minmax(240px,1fr));gap:22px;align-items:start}
+    .player-link{display:block;min-width:0;width:100%}.player-link.is-hidden{display:none}.player-card{position:relative;width:100%;aspect-ratio:3/4.25;min-height:430px;background:#e5dccd;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid #101f3a08;transition:transform .25s ease,box-shadow .25s ease}
+    .player-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px #101f3a18}
+    .player-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#f1ece240,#cfc3b252),url('assets/home-kit-story-pattern.webp') center/cover;opacity:.55}
+    .player-card:after{content:"";position:absolute;left:0;right:0;top:34px;bottom:76px;background:var(--photo) center bottom/contain no-repeat}
+    .number{position:absolute;z-index:1;top:16px;left:18px;font:700 52px/.9 "Libre Caslon Display",Georgia,serif;color:#101f3a78}
+    .captain-band{position:absolute;z-index:4;top:16px;right:14px;min-width:34px;height:24px;padding:0 8px;background:var(--burgundy);color:#f8f5ee;display:grid;place-items:center;font:800 15px/1 Inter,Arial,sans-serif;letter-spacing:.04em;border:1px solid #f8f5ee90;box-shadow:0 9px 18px #101f3a24}.captain-band:before,.captain-band:after{content:"";position:absolute;top:0;width:5px;height:100%;background:#f8f5ee30}.captain-band:before{left:0}.captain-band:after{right:0}.captain-band.vice{background:var(--navy);font-size:12px}
+    .flag{position:relative;z-index:3;flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#f8f5eecc;border:1px solid #101f3a24;padding:4px;display:grid;place-items:center;box-shadow:0 8px 18px #101f3a24}.flag img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .player-info{position:relative;z-index:2;height:76px;background:var(--warm);border-top:1px solid #101f3a18;padding:0 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.player-info b{display:block;min-width:0;flex:1 1 auto;font:700 28px/.95 "Libre Caslon Display",Georgia,serif;letter-spacing:-.04em;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.position-pill{position:absolute;z-index:4;right:14px;bottom:calc(100% + 12px);display:inline-grid;place-items:center;min-width:42px;height:20px;border-radius:999px;border:1px solid #f8f5ee80;background:#f8f5ee;color:var(--navy);box-shadow:0 6px 14px #101f3a12;font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    footer{background:#020936;color:#f1ece2;padding:74px 0 0;overflow:hidden}.tops-pattern{overflow:hidden}.tops-pattern-track{display:flex;align-items:center;gap:76px;width:max-content;animation:topsMarquee 24s linear infinite}.tops-pattern-item{display:flex;align-items:center;gap:.16em;white-space:nowrap;color:#f1ece2;font:italic clamp(128px,13.8vw,228px)/.78 Georgia,serif;letter-spacing:-.065em;text-transform:uppercase}.tops-pattern-item img{width:.86em;height:.86em;object-fit:contain;display:block;transform:translateY(-.015em)}@keyframes topsMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(max-width:700px){.tops-pattern-track{gap:42px;animation-duration:18s}.tops-pattern-item{font-size:88px}}
+    @media(max-width:1280px){.player-grid{grid-template-columns:repeat(3,minmax(240px,1fr))}}@media(max-width:980px){.player-grid{grid-template-columns:repeat(2,minmax(240px,1fr))}}@media(max-width:760px){.rail,.rail-submenu{display:none}.page{margin-left:0}.player-card{min-height:360px}}@media(max-width:620px){.player-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <aside class="rail">
+    <a class="rail-brand" href="index.html#top" aria-label="TOPS home"><span class="tops-wordmark"><img src="assets/sidebar-sculpture-logo.webp" alt="TOPS"></span></a>
+    <nav><a href="index.html#fixtures" data-menu="matches">Matches</a><a class="active" href="mens-first-team.html" data-menu="teams">Teams</a><a href="index.html#tickets" data-menu="tickets">Tickets</a><a href="index.html#membership" data-menu="membership">Membership</a><a href="index.html#shop" data-menu="shop">Shop IFC</a><a href="index.html#play" data-menu="play">IFC PLAY</a><a href="index.html#club" data-menu="club">The Club</a><a href="index.html#latest" data-menu="explore">Explore</a></nav>
+  </aside>
+  <aside class="rail-submenu" aria-hidden="true"><p class="rail-submenu-kicker">Teams</p><ul class="rail-submenu-list"></ul></aside>
+  <main class="page">
+    <header class="team-header"><div class="team-heading"><h1><span>MEN'S</span><span>FIRST TEAM</span></h1></div><nav class="tabs"><a class="active" href="#squad">Squad</a><a href="history-rankings.html">History Rankings</a><a href="squad-finance.html">Finance</a><a href="transfer-history.html">Transfers</a><a href="predecessor-players.html">Predecessor</a></nav></header>
+    <div class="toolbar">
+      <div class="position-filter" data-position-filter>
+        <button class="filter-trigger" type="button" aria-expanded="false">All</button>
+        <div class="filter-menu" role="menu">
+          <button class="filter-option active" type="button" data-position="all">All</button>
+          <button class="filter-option" type="button" data-position="goalkeeper">Goalkeepers</button>
+          <button class="filter-option" type="button" data-position="defender">Defenders</button>
+          <button class="filter-option" type="button" data-position="midfielder">Midfielders</button>
+          <button class="filter-option" type="button" data-position="forward">Forwards</button>
+        </div>
+      </div>
+    </div>
+    <section class="squad" id="squad">
+      <div class="player-grid">
+        <a class="player-link" href="player-detail.html?id=guglielmo-vicario"><article class="player-card" style="--photo:url('assets/guglielmo-vicario.webp')"><span class="number">1</span><span class="captain-band vice" aria-label="Vice captain">VC</span><div class="player-info"><b>Guglielmo Vicario</b><span class="flag"><img src="assets/it_1x1.svg" alt="Italy"></span><span class="position-pill" data-position="goalkeeper">GKP</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=jarrad-branthwaite"><article class="player-card" style="--photo:url('assets/jarrad-branthwaite.png')"><span class="number">2</span><div class="player-info"><b>Jarrad Branthwaite</b><span class="flag"><img src="assets/gb-eng.svg" alt="England"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=alessandro-bastoni"><article class="player-card" style="--photo:url('assets/alessandro-bastoni.png')"><span class="number">3</span><div class="player-info"><b>Alessandro Bastoni</b><span class="flag"><img src="assets/it_1x1.svg" alt="Italy"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=tino-livramento"><article class="player-card" style="--photo:url('assets/tino-livramento.webp')"><span class="number">4</span><span class="captain-band" aria-label="Captain">C</span><div class="player-info"><b>Tino Livramento</b><span class="flag"><img src="assets/gb-eng.svg" alt="England"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=pau-cubarsi"><article class="player-card" style="--photo:url('assets/pau-cubarsi.webp')"><span class="number">5</span><div class="player-info"><b>Pau Cubarsi</b><span class="flag"><img src="assets/es_1x1.svg" alt="Spain"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=marcel-ruiz"><article class="player-card" style="--photo:url('assets/marcel-ruiz.webp')"><span class="number">6</span><span class="captain-band vice" aria-label="Vice captain">VC</span><div class="player-info"><b>Marcel Ruiz</b><span class="flag"><img src="assets/mx_1x1.svg" alt="Mexico"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=alex-baena"><article class="player-card" style="--photo:url('assets/alex-baena.webp')"><span class="number">7</span><span class="captain-band vice" aria-label="Vice captain">VC</span><div class="player-info"><b>Alex Baena</b><span class="flag"><img src="assets/es_1x1.svg" alt="Spain"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=nico-paz"><article class="player-card" style="--photo:url('assets/nico-paz.webp')"><span class="number">8</span><div class="player-info"><b>Nico Paz</b><span class="flag"><img src="assets/ar_1x1.svg" alt="Argentina"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=omar-marmoush"><article class="player-card" style="--photo:url('assets/omar-marmoush.webp')"><span class="number">9</span><div class="player-info"><b>Omar Marmoush</b><span class="flag"><img src="assets/eg_1x1.svg" alt="Egypt"></span><span class="position-pill" data-position="forward">FWD</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=ferran-torres"><article class="player-card" style="--photo:url('assets/ferran-torres.webp')"><span class="number">10</span><div class="player-info"><b>Ferran Torres</b><span class="flag"><img src="assets/es_1x1.svg" alt="Spain"></span><span class="position-pill" data-position="forward">FWD</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=jude-bellingham"><article class="player-card" style="--photo:url('assets/jude-bellingham.png')"><span class="number">11</span><div class="player-info"><b>Jude Bellingham</b><span class="flag"><img src="assets/gb-eng.svg" alt="England"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=jose-carmona"><article class="player-card" style="--photo:url('assets/jose-carmona.webp')"><span class="number">12</span><div class="player-info"><b>Jose Carmona</b><span class="flag"><img src="assets/es_1x1.svg" alt="Spain"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=luka-vuskovic"><article class="player-card" style="--photo:url('assets/luka-vuskovic.webp?v=2')"><span class="number">13</span><div class="player-info"><b>Luka Vuskovic</b><span class="flag"><img src="assets/hr_1x1.svg" alt="Croatia"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=romeo-vermant"><article class="player-card" style="--photo:url('assets/romeo-vermant.png')"><span class="number">14</span><div class="player-info"><b>Romeo Vermant</b><span class="flag"><img src="assets/be_1x1.svg" alt="Belgium"></span><span class="position-pill" data-position="forward">FWD</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=marc-bernal"><article class="player-card" style="--photo:url('assets/marc-bernal.webp')"><span class="number">15</span><div class="player-info"><b>Marc Bernal</b><span class="flag"><img src="assets/es_1x1.svg" alt="Spain"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=archie-gray"><article class="player-card" style="--photo:url('assets/archie-gray.webp')"><span class="number">16</span><div class="player-info"><b>Archie Gray</b><span class="flag"><img src="assets/gb-eng.svg" alt="England"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=lucas-bergvall"><article class="player-card" style="--photo:url('assets/lucas-bergvall.webp?v=2')"><span class="number">17</span><div class="player-info"><b>Lucas Bergvall</b><span class="flag"><img src="assets/se_circle.svg" alt="Sweden"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=gilberto-mora"><article class="player-card" style="--photo:url('assets/gilberto-mora.webp')"><span class="number">18</span><div class="player-info"><b>Gilberto Mora</b><span class="flag"><img src="assets/mx_1x1.svg" alt="Mexico"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=charalampos-kostoulas"><article class="player-card" style="--photo:url('assets/charalampos-kostoulas.webp')"><span class="number">19</span><div class="player-info"><b>Charalampos Kostoulas</b><span class="flag"><img src="assets/gr_1x1.svg" alt="Greece"></span><span class="position-pill" data-position="forward">FWD</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=jacopo-fazzini"><article class="player-card" style="--photo:url('assets/jacopo-fazzini.webp')"><span class="number">20</span><div class="player-info"><b>Jacopo Fazzini</b><span class="flag"><img src="assets/it_1x1.svg" alt="Italy"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=antonito-cordero"><article class="player-card" style="--photo:url('assets/antonito-cordero.webp')"><span class="number">21</span><div class="player-info"><b>Antonito Cordero</b><span class="flag"><img src="assets/es_1x1.svg" alt="Spain"></span><span class="position-pill" data-position="forward">FWD</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=alex-valle"><article class="player-card" style="--photo:url('assets/alex-valle.webp')"><span class="number">22</span><div class="player-info"><b>Alex Valle</b><span class="flag"><img src="assets/es_1x1.svg" alt="Spain"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=lewis-miley"><article class="player-card" style="--photo:url('assets/lewis-miley.png')"><span class="number">23</span><div class="player-info"><b>Lewis Miley</b><span class="flag"><img src="assets/gb-eng.svg" alt="England"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=elias-baum"><article class="player-card" style="--photo:url('assets/elias-baum.webp')"><span class="number">24</span><div class="player-info"><b>Elias Baum</b><span class="flag"><img src="assets/de_1x1.svg" alt="Germany"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=cassian-wrenford"><article class="player-card" style="--photo:url('assets/victor-gonzalez.webp?v=3')"><span class="number">25</span><div class="player-info"><b>Cassian Wrenford</b><span class="flag"><img src="assets/gb-eng.svg" alt="England"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=desire-doue"><article class="player-card" style="--photo:url('assets/desire-doue.png')"><span class="number">27</span><div class="player-info"><b>Desire Doue</b><span class="flag"><img src="assets/fr_1x1.svg" alt="France"></span><span class="position-pill" data-position="forward">FWD</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=tyler-dibling"><article class="player-card" style="--photo:url('assets/tyler-dibling.webp')"><span class="number">30</span><div class="player-info"><b>Tyler Dibling</b><span class="flag"><img src="assets/gb-eng.svg" alt="England"></span><span class="position-pill" data-position="forward">FWD</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=riccardo-calafiori"><article class="player-card" style="--photo:url('assets/riccardo-calafiori.webp')"><span class="number">33</span><div class="player-info"><b>Riccardo Calafiori</b><span class="flag"><img src="assets/it_1x1.svg" alt="Italy"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=josh-acheampong"><article class="player-card" style="--photo:url('assets/josh-acheampong.png')"><span class="number">34</span><div class="player-info"><b>Josh Acheampong</b><span class="flag"><img src="assets/gb-eng.svg" alt="England"></span><span class="position-pill" data-position="defender">DEF</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=martin-zubimendi"><article class="player-card" style="--photo:url('assets/martin-zubimendi.webp')"><span class="number">36</span><span class="captain-band vice" aria-label="Vice captain">VC</span><div class="player-info"><b>Martin Zubimendi</b><span class="flag"><img src="assets/es_1x1.svg" alt="Spain"></span><span class="position-pill" data-position="midfielder">MID</span></div></article></a>
+        <a class="player-link" href="player-detail.html?id=berke-ozer"><article class="player-card" style="--photo:url('assets/berke-ozer.webp?v=3')"><span class="number">99</span><div class="player-info"><b>Berke Ozer</b><span class="flag"><img src="assets/tr_1x1.svg" alt="Turkey"></span><span class="position-pill" data-position="goalkeeper">GKP</span></div></article></a>
+      </div>
+    </section>
+    <footer><div class="tops-pattern" aria-label="TOPS brand pattern"><div class="tops-pattern-track"><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span></div></div></footer>
+  </main>
+  <script>
+    const rail = document.querySelector('.rail');
+    const railLinks = [...document.querySelectorAll('.rail nav a')];
+    const submenu = document.querySelector('.rail-submenu');
+    const submenuKicker = document.querySelector('.rail-submenu-kicker');
+    const submenuList = document.querySelector('.rail-submenu-list');
+    let submenuCloseTimer;
+    const submenuItems = {
+      matches: ['Fixtures', 'Results', 'Tables', 'Match centre', 'Borough Cup'],
+      teams: [{ label: "Men's First Team", href: 'mens-first-team.html' }, { label: "History Rankings", href: 'history-rankings.html' }, { label: "Squad Finance", href: 'squad-finance.html' }, { label: "Transfer History", href: 'transfer-history.html' }, { label: "Predecessor Players", href: 'predecessor-players.html' }, "Women's First Team", "Men's U21", "Women's U19", "Men's U18"],
+      tickets: ['Home tickets', 'Away tickets', 'Premium', 'Season tickets', 'Ticket exchange'],
+      membership: ['Join TOPS', 'Renew membership', 'Member benefits', 'Ticket access', 'Account'],
+      shop: ['Home kit', 'Away kit', 'Training wear', 'Lifestyle', 'Accessories'],
+      play: ['Live stream', 'Highlights', 'Interviews', 'Documentaries', 'Archive'],
+      club: ['History', 'Stadium', 'Community', 'Foundation', 'Contact'],
+      explore: ['Latest news', 'Gallery', 'Video', 'Features', 'Visit N5']
+    };
+
+    const keepSubmenuOpen = () => clearTimeout(submenuCloseTimer);
+    const closeSubmenu = () => {
+      document.body.classList.remove('submenu-open');
+      submenu.setAttribute('aria-hidden', 'true');
+      railLinks.forEach((link) => link.classList.remove('is-submenu-active'));
+    };
+    const scheduleSubmenuClose = () => {
+      clearTimeout(submenuCloseTimer);
+      submenuCloseTimer = setTimeout(closeSubmenu, 120);
+    };
+    const openSubmenu = (link) => {
+      const key = link.dataset.menu;
+      if (!key || !submenuItems[key]) return;
+      keepSubmenuOpen();
+      submenuKicker.textContent = link.textContent.trim();
+      submenuList.innerHTML = submenuItems[key].map((item) => {
+        const label = typeof item === 'string' ? item : item.label;
+        const href = typeof item === 'string' ? '#' : item.href;
+        return `<li><a href="${href}">${label}</a></li>`;
+      }).join('');
+      railLinks.forEach((item) => item.classList.toggle('is-submenu-active', item === link));
+      submenu.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('submenu-open');
+    };
+
+    railLinks.forEach((link) => {
+      link.addEventListener('mouseenter', () => openSubmenu(link));
+      link.addEventListener('focus', () => openSubmenu(link));
+    });
+    rail.addEventListener('mouseleave', scheduleSubmenuClose);
+    rail.addEventListener('mouseenter', keepSubmenuOpen);
+    submenu.addEventListener('mouseleave', scheduleSubmenuClose);
+    submenu.addEventListener('mouseenter', keepSubmenuOpen);
+
+    const positionFilter = document.querySelector('[data-position-filter]');
+    const trigger = positionFilter.querySelector('.filter-trigger');
+    const options = [...positionFilter.querySelectorAll('.filter-option')];
+    const players = [...document.querySelectorAll('.player-link')];
+
+    const setFilter = (position, label) => {
+      trigger.textContent = label;
+      options.forEach((option) => option.classList.toggle('active', option.dataset.position === position));
+      players.forEach((player) => {
+        const playerPosition = player.querySelector('.position-pill')?.dataset.position;
+        player.classList.toggle('is-hidden', position !== 'all' && playerPosition !== position);
+      });
+      positionFilter.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+
+    trigger.addEventListener('click', () => {
+      const isOpen = positionFilter.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('click', () => setFilter(option.dataset.position, option.textContent.trim()));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!positionFilter.contains(event.target)) {
+        positionFilter.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+</body>
+</html>

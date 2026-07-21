@@ -1,4 +1,4 @@
-# GENTS | Islington FC
+﻿# TOPS | Islington FC
 
 Static GitHub Pages deployment of the Islington FC modern heritage homepage.
 

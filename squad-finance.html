@@ -1,0 +1,151 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Squad Finance | TOPS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#071426;--navy:#101f3a;--burgundy:#6f1f2c;--warm:#f1ece2;--paper:#faf8f3;--line:#101f3a18;--gold:#c6a35b;--muted:#6e7f94}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--warm);color:var(--ink);font-family:"DM Sans",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .rail{position:fixed;z-index:9;inset:0 auto 0 0;width:200px;background:var(--burgundy);color:var(--warm);border-right:2px solid var(--gold);display:flex;flex-direction:column}
+    .rail-brand{display:grid;place-items:center;width:100%;padding:42px 24px 38px;margin:0 0 40px;background:var(--navy);border-bottom:2px solid var(--gold)}
+    .tops-wordmark{display:block;width:126px;max-width:100%;line-height:0;margin:0 auto}.tops-wordmark img{display:block;width:100%;height:auto}
+    .rail nav{display:flex;flex-direction:column;gap:18px;padding:0 24px;color:var(--warm);font:700 22px/1.06 "Libre Caslon Display",Georgia,serif;letter-spacing:-.025em}
+    .rail nav a:hover,.rail nav a.active{color:var(--gold)}
+    .page{margin-left:200px;min-height:100vh}
+    .team-header{position:relative;min-height:300px;padding:56px 0 0;background:linear-gradient(90deg,rgba(2,9,54,.50),rgba(2,9,54,.10)),url('assets/first-team-header.webp') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between}
+    .team-header:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,9,54,.08),rgba(2,9,54,.38));pointer-events:none}
+    .team-heading{position:relative;z-index:1;padding:0 clamp(28px,4vw,64px) 42px}
+    h1{font:italic 800 clamp(54px,6.8vw,108px)/.82 "Libre Caslon Display",Georgia,serif;margin:0;color:#f1ece2;letter-spacing:-.055em}
+    h1 span{display:block}
+    .tabs{--tab-radius:24px;position:relative;z-index:2;width:min(1280px,calc(100% - clamp(56px,10vw,160px)));margin:0 auto -34px;min-height:72px;background:#f8f5ee;border:1px solid #c6a35b70;border-bottom:0;border-radius:var(--tab-radius) var(--tab-radius) 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:start;padding:8px;color:var(--navy);box-shadow:0 -1px 0 #ffffffb0 inset,0 -12px 28px #02093622}
+    .tabs a{height:54px;display:grid;place-items:center;border-radius:16px;border:1px solid transparent;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.15em;text-align:center;color:var(--navy);transition:background .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease}
+    .tabs a:hover{border-color:#6f1f2c2e;background:#efe7dc;color:var(--burgundy)}.tabs a.active{background:var(--burgundy);border-color:#c6a35b80;color:#f8f5ee;box-shadow:0 12px 22px #101f3a24}
+    .finance{padding:88px clamp(24px,4vw,64px) 90px;background:linear-gradient(180deg,#f1ece2 0%,#f8f5ee 42%,#f1ece2 100%)}
+    .overview{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:14px;margin-bottom:22px}
+    .overview-card{background:#fffaf2;border:1px solid var(--line);padding:18px 18px 16px;box-shadow:0 12px 28px #101f3a0c}
+    .overview-card span{display:block;margin-bottom:16px;color:#7b8aa0;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+    .overview-card b{display:block;color:var(--navy);font:900 34px/.9 "Libre Caslon Display",Georgia,serif;letter-spacing:-.04em}
+    .overview-card.accent{background:linear-gradient(115deg,var(--burgundy),#4c263f 58%,var(--navy));border-color:#c6a35b60}.overview-card.accent span,.overview-card.accent b{color:#f8f5ee}
+    .toolbar{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:end;background:#f8f5ee;border:1px solid var(--line);padding:24px;margin-bottom:22px;box-shadow:0 14px 34px #101f3a0c}
+    .toolbar p{margin:0 0 6px;color:#7b8aa0;font-size:10px;font-weight:900;letter-spacing:.22em;text-transform:uppercase}.toolbar h2{margin:0;color:var(--navy);font:900 clamp(24px,2.6vw,34px)/1 "DM Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+    .field{display:grid;gap:8px}.field span{color:#7b8aa0;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.field select{height:48px;min-width:170px;border:1px solid var(--line);background:#fff;color:var(--navy);padding:0 14px;font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    .finance-search{height:48px;min-width:280px;border:1px solid var(--line);background:#fff;color:var(--navy);padding:0 16px;font-size:14px;font-weight:800}
+    .table-shell{background:#fffaf2;border:1px solid var(--line);box-shadow:0 16px 34px #101f3a10;overflow:auto}
+    table{width:100%;min-width:980px;border-collapse:collapse;color:var(--navy)}
+    th{position:sticky;top:0;background:#fffaf2;z-index:1;padding:16px 16px;border-bottom:1px solid #101f3a24;color:#657489;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;text-align:left}
+    td{padding:15px 16px;border-bottom:1px solid #101f3a12;font-size:14px;font-weight:800;vertical-align:middle}
+    tbody tr:hover{background:#f7efe5}.rank{color:var(--burgundy);font-weight:900}.player-cell{display:flex;align-items:center;gap:10px}.player-cell a{font-size:16px;font-weight:900}.flag{width:23px;height:23px;border-radius:50%;background:#fff;border:1px solid #101f3a18;padding:3px;flex:0 0 auto}.flag img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .money{text-align:right;font-variant-numeric:tabular-nums}.weekly{color:var(--burgundy);font-weight:900}.muted{color:#6e7f94}
+    footer{background:#020936;color:#f1ece2;padding:74px 0 0;overflow:hidden}.tops-pattern{overflow:hidden}.tops-pattern-track{display:flex;align-items:center;gap:76px;width:max-content;animation:topsMarquee 24s linear infinite}.tops-pattern-item{display:flex;align-items:center;gap:.16em;white-space:nowrap;color:#f1ece2;font:italic clamp(128px,13.8vw,228px)/.78 Georgia,serif;letter-spacing:-.065em;text-transform:uppercase}.tops-pattern-item img{width:.86em;height:.86em;object-fit:contain;display:block;transform:translateY(-.015em)}@keyframes topsMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @media(max-width:1100px){.overview{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr}.finance-search,.field select{width:100%;min-width:0}}@media(max-width:760px){.rail{display:none}.page{margin-left:0}.tabs{width:calc(100% - 24px);grid-template-columns:repeat(2,1fr);border-radius:24px 24px 0 0}.finance{padding:70px 12px}.overview{grid-template-columns:1fr}.toolbar{padding:22px}}
+  </style>
+</head>
+<body>
+  <aside class="rail"><a class="rail-brand" href="index.html#top" aria-label="TOPS home"><span class="tops-wordmark"><img src="assets/sidebar-sculpture-logo.webp" alt="TOPS"></span></a><nav><a href="index.html#fixtures">Matches</a><a class="active" href="mens-first-team.html">Teams</a><a href="index.html#tickets">Tickets</a><a href="index.html#membership">Membership</a><a href="index.html#shop">Shop IFC</a><a href="index.html#play">IFC PLAY</a><a href="index.html#club">The Club</a><a href="index.html#latest">Explore</a></nav></aside>
+  <main class="page">
+    <header class="team-header"><div class="team-heading"><h1><span>SQUAD</span><span>FINANCE</span></h1></div><nav class="tabs"><a href="mens-first-team.html#squad">Squad</a><a href="history-rankings.html">History Rankings</a><a class="active" href="squad-finance.html">Finance</a><a href="transfer-history.html">Transfers</a><a href="predecessor-players.html">Predecessor</a></nav></header>
+    <section class="finance">
+      <div class="overview" data-overview></div>
+      <div class="toolbar">
+        <div><p>First Team Payroll</p><h2>Weekly wages, annual salary and market value</h2></div>
+        <label class="field"><span>Season</span><select data-season></select></label>
+        <input class="finance-search" type="search" placeholder="Search player or position" data-search>
+      </div>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Rank</th><th>Player</th><th>Pos</th><th>Age</th><th class="money">Weekly</th><th class="money">Annual</th><th class="money">Market Value</th></tr></thead>
+          <tbody data-table></tbody>
+        </table>
+      </div>
+    </section>
+    <footer><div class="tops-pattern" aria-label="TOPS brand pattern"><div class="tops-pattern-track"><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span><span class="tops-pattern-item">TOPS <img src="assets/islington-hat-cream-transparent.webp" alt=""></span></div></div></footer>
+  </main>
+  <script src="assets/player-data.js"></script>
+  <script src="assets/predecessor-player-data.js"></script>
+  <script src="assets/transfer-data.js"></script>
+  <script>
+    const currentPlayers = window.TOPS_PLAYER_DATA || [];
+    const predecessorPlayers = window.TOPS_PREDECESSOR_PLAYER_DATA || [];
+    const playerIndex = new Map([...currentPlayers, ...predecessorPlayers].map((player) => [player.id, player]));
+    const transferData = window.TOPS_TRANSFER_DATA || { windows: [] };
+    const table = document.querySelector('[data-table]');
+    const search = document.querySelector('[data-search]');
+    const seasonSelect = document.querySelector('[data-season]');
+    const overview = document.querySelector('[data-overview]');
+    const moneyValue = (value) => Number(String(value || "").replace(/[^0-9.]/g, "")) || 0;
+    const weeklyValue = (player) => moneyValue(player.weeklyWage);
+    const annualValue = (player) => moneyValue(player.annualSalary);
+    const marketValue = (player) => moneyValue(player.marketValue);
+    const formatMoney = (value, suffix = "") => `&euro;${value.toLocaleString(undefined, { maximumFractionDigits: 1 })}${suffix}`;
+    const displayMoney = (value) => String(value || "").replace(/EUR/g, "&euro;");
+    const roundHalfMillion = (value) => Math.round(value * 2) / 2;
+    const annualFromWeekly = (weekly) => weekly ? `&euro;${roundHalfMillion(moneyValue(weekly) * 52 / 1000000).toFixed(1)}M` : "";
+    const currentRows = () => currentPlayers.filter((player) => player.weeklyWage).map((player) => ({ ...player, source: "Current squad" }));
+    const rowsForSeason = (season) => {
+      if (season === "2028/29") return currentRows();
+      return transferData.windows
+        .filter((windowItem) => windowItem.season === season)
+        .flatMap((windowItem) => [...(windowItem.arrivals || []), ...(windowItem.academyPromotions || [])])
+        .filter((entry) => entry.weeklyWage)
+        .map((entry) => {
+          const player = playerIndex.get(entry.playerId) || {};
+          return {
+            id: entry.playerId,
+            name: player.name || entry.player,
+            flag: player.flag || "",
+            nationality: player.nationality || "",
+            specificPosition: player.specificPosition || player.positionShort || "",
+            position: player.position || "",
+            age: player.age || "",
+            weeklyWage: displayMoney(entry.weeklyWage),
+            annualSalary: annualFromWeekly(entry.weeklyWage),
+            marketValue: "",
+            source: `${windowItem.season} ${windowItem.window}`
+          };
+        });
+    };
+    const seasons = ["2028/29", ...new Set(transferData.windows.map((windowItem) => windowItem.season).filter((season) => season !== "2028/29"))].sort().reverse();
+    seasonSelect.innerHTML = seasons.map((season) => `<option value="${season}">${season}</option>`).join("");
+    const row = (player, index) => `
+      <tr data-search-text="${`${player.name} ${player.specificPosition} ${player.position}`.toLowerCase()}">
+        <td class="rank">${index + 1}</td>
+        <td><div class="player-cell">${player.flag ? `<span class="flag"><img src="${player.flag}" alt="${player.nationality}"></span>` : ""}<a href="player-detail.html?id=${player.id}">${player.name}</a></div></td>
+        <td>${player.specificPosition || player.positionShort || ""}</td>
+        <td class="muted">${player.age || ""}</td>
+        <td class="money weekly">${displayMoney(player.weeklyWage)}</td>
+        <td class="money">${player.annualSalary ? displayMoney(player.annualSalary) : "-"}</td>
+        <td class="money">${player.marketValue ? displayMoney(player.marketValue) : "-"}</td>
+      </tr>
+    `;
+    const render = () => {
+      const ordered = rowsForSeason(seasonSelect.value).sort((a, b) => weeklyValue(b) - weeklyValue(a) || a.name.localeCompare(b.name));
+      const totals = ordered.reduce((sum, player) => ({
+        weekly: sum.weekly + weeklyValue(player),
+        annual: sum.annual + annualValue(player),
+        market: sum.market + marketValue(player)
+      }), { weekly: 0, annual: 0, market: 0 });
+      overview.innerHTML = `
+        <div class="overview-card accent"><span>Players Listed</span><b>${ordered.length}</b></div>
+        <div class="overview-card"><span>Weekly Payroll</span><b>${formatMoney(totals.weekly)}</b></div>
+        <div class="overview-card"><span>Annual Payroll</span><b>${formatMoney(totals.annual, "M")}</b></div>
+        <div class="overview-card"><span>Market Value</span><b>${totals.market ? formatMoney(totals.market, "M") : "-"}</b></div>
+      `;
+      table.innerHTML = ordered.map(row).join("");
+      applySearch();
+    };
+    const applySearch = () => {
+      const query = search.value.trim().toLowerCase();
+      [...table.querySelectorAll('tr')].forEach((item) => item.hidden = query && !item.dataset.searchText.includes(query));
+    };
+    search.addEventListener('input', applySearch);
+    seasonSelect.addEventListener('change', render);
+    render();
+  </script>
+</body>
+</html>

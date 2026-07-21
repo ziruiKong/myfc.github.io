@@ -1,0 +1,62 @@
+:root{--ink:#071426;--navy:#101f3a;--burgundy:#6f1f2c;--warm:#f1ece2;--paper:#faf8f3;--line:#101f3a1c;--gold:#c6a35b;--muted:#778194}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% 0,#fff 0,#faf8f3 34%,#f3eee5 100%);color:var(--ink);font-family:"DM Sans",sans-serif}
+a{color:inherit;text-decoration:none}
+.rail{position:fixed;z-index:9;inset:0 auto 0 0;width:200px;background:var(--burgundy);color:var(--warm);border-right:2px solid var(--gold);display:flex;flex-direction:column}
+.rail-brand{display:grid;place-items:center;width:100%;padding:42px 24px 38px;margin:0 0 40px;background:var(--navy);border-bottom:2px solid var(--gold)}
+.tops-wordmark{display:block;width:126px;max-width:100%;line-height:0;margin:0 auto}.tops-wordmark img{display:block;width:100%;height:auto}
+.rail nav{display:flex;flex-direction:column;gap:18px;padding:0 24px;color:var(--warm);font:700 22px/1.06 "Libre Caslon Display",Georgia,serif;letter-spacing:-.025em}
+.rail nav a:hover,.rail nav a.active{color:var(--gold)}
+.page{margin-left:200px;min-height:100vh}.profile{padding:42px clamp(28px,4vw,66px) 82px}
+.back-link{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;color:var(--burgundy);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.profile-head{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:center;margin:0 0 32px;padding:30px 34px;border:1px solid #f1ece22e;background:linear-gradient(105deg,#6f1f2c 0%,#7d2233 48%,#101f3a 100%);box-shadow:0 22px 48px #101f3a20;overflow:hidden}
+.profile-head:before{content:"";position:absolute;inset:auto 0 0;height:3px;background:linear-gradient(90deg,var(--gold),#f1ece2,var(--burgundy));opacity:.85}.profile-head>*{position:relative;z-index:1}
+.profile-number{font:700 clamp(62px,7vw,106px)/.78 "Libre Caslon Display",Georgia,serif;color:#f1ece270;letter-spacing:-.06em}
+.profile-name{margin:0;color:#fffaf2;font:700 clamp(50px,5.8vw,86px)/.82 "Libre Caslon Display",Georgia,serif;letter-spacing:-.045em;text-shadow:0 8px 26px #02093638}
+.title-facts{display:inline-flex;justify-self:end;align-items:center;gap:18px;flex-wrap:wrap;color:#fffaf2}
+.title-fact{display:inline-flex;align-items:center;gap:9px;min-height:34px;padding-right:18px;border-right:1px solid #f1ece240}
+.title-fact:last-child{border-right:0;padding-right:0}.title-fact img{width:28px;height:28px;object-fit:cover;border-radius:50%;background:#fff;border:1px solid #f1ece280}.title-fact b{font-size:16px;font-weight:900;letter-spacing:.04em;color:#fffaf2}.title-age{display:inline-grid;gap:3px;align-items:center}.title-age b{font-size:24px;line-height:.9;color:#fffaf2}.title-age small{color:#d8caa8;font-size:11px;font-weight:800;letter-spacing:.06em}
+.profile-grid{display:grid;grid-template-columns:minmax(330px,470px) minmax(0,1fr);gap:38px;align-items:start}
+.portrait-card{position:sticky;top:22px;min-height:705px;margin:0;border:1px solid #c6a35bcc;background:#ebe3d6;overflow:hidden;box-shadow:0 22px 45px #101f3a10,0 0 0 4px #c6a35b26,inset 0 0 0 1px #fff7}
+.portrait-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#fff8,#e8dcc999),url('home-kit-story-pattern.webp') center/cover;opacity:.74}
+.portrait-card img{position:absolute;z-index:1;left:0;right:0;bottom:0;width:100%;height:92%;object-fit:contain;object-position:center bottom}
+.content-panel{display:grid;gap:26px}
+.panel{background:#fffaf2b8;border:1px solid #fff;box-shadow:0 16px 34px #101f3a12, inset 0 0 0 1px #101f3a12;border-radius:6px}
+.panel-title{display:flex;align-items:center;gap:12px;margin:0 0 22px;color:var(--burgundy);font-size:12px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;white-space:nowrap}
+.panel-title:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #c6a35b24}
+.panel-title:after{content:"";display:block;flex:1;height:1px;min-width:28px;background:linear-gradient(90deg,#6f1f2c4d,#101f3a12)}
+.career-card{padding:28px 36px}
+.career-stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.career-stat{min-height:116px;display:grid;place-items:center;text-align:center;border-left:1px solid #101f3a24}
+.career-stat:first-child{border-left:0}
+.stat-value{font:700 clamp(56px,5.2vw,84px)/.82 "Libre Caslon Display",Georgia,serif;color:var(--navy);letter-spacing:-.035em}
+.stat-label{margin-top:10px;color:var(--navy);font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.stat-label small{display:block;margin-top:5px;font-size:10px;letter-spacing:.14em}
+.season-block{padding:26px 36px 30px}
+.season-title{margin:0 0 14px;color:var(--burgundy);font-size:14px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.season-table{width:100%;border-collapse:collapse;color:var(--navy)}
+.season-table th{padding:13px 8px 13px 0;border-top:1px solid #101f3a2a;border-bottom:1px solid #101f3a24;color:#4f5b6e;font-size:11px;font-weight:900;letter-spacing:.19em;text-transform:uppercase;text-align:center}
+.season-table th:first-child,.season-table td:first-child{text-align:left}
+.season-table td{padding:13px 8px 13px 0;border-bottom:1px solid #101f3a20;text-align:center;font:700 25px/1 "Libre Caslon Display",Georgia,serif;color:#020936}
+.season-cell{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.loan-chip{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:104px;padding:6px 10px;border:1px solid #6f1f2c42;background:#fff;color:var(--burgundy);text-align:center;text-transform:uppercase}
+.loan-chip b{font-size:13px;letter-spacing:.14em;line-height:1}.loan-chip span{display:flex;align-items:center;gap:6px;margin-top:4px;color:var(--navy);font-size:9px;font-weight:900;letter-spacing:.06em}.loan-chip img{width:18px;height:18px;object-fit:contain}
+.info-row{display:grid;grid-template-columns:minmax(220px,1fr) minmax(310px,1.65fr);gap:24px;align-items:start}
+.info-row.compact{display:block}
+.bio-card{background:transparent;border:0;box-shadow:none}.bio-card .panel-title{font-size:13px}.bio-card p{margin:0;color:var(--navy);font-size:15px;line-height:1.42}
+.facts-card{padding:22px 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-self:end}
+.fact{padding:0 18px;border-left:1px solid #101f3a24}.fact:first-child{border-left:0}
+.fact-label{display:block;margin-bottom:12px;color:#687284;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.fact-value{display:flex;align-items:center;gap:10px;color:var(--navy);font:700 24px/1 "Libre Caslon Display",Georgia,serif}.fact-value img{width:28px;height:28px;object-fit:cover;border-radius:50%;background:#fff;border:1px solid #101f3a18}
+.transfer-section{padding:18px 26px 20px}.transfer-stack{display:grid;gap:0}.transfer-card{padding:16px 0;border-top:1px solid #101f3a1f}.transfer-card:first-child{border-top:0;padding-top:0}.transfer-layout{display:grid;grid-template-columns:120px 1fr 34px 1fr 160px;gap:18px;align-items:center}
+.transfer-kind{color:var(--burgundy);font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.transfer-kind b{display:block;color:var(--navy);margin-bottom:8px}
+.club-token{display:grid;justify-items:center;gap:10px;color:var(--navy);font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;text-align:center}
+.club-logo{width:64px;height:64px;display:grid;place-items:center;color:var(--burgundy);font:900 18px/1 "DM Sans",sans-serif;letter-spacing:.02em}.club-logo img{width:58px;height:58px;object-fit:contain}
+.transfer-arrow{color:var(--burgundy);font:500 44px/1 "Libre Caslon Display",Georgia,serif;text-align:center}
+.transfer-money{border-left:1px solid #101f3a24;padding-left:22px;color:var(--navy);text-align:center}
+.money-label{display:block;color:var(--burgundy);font-size:10px;font-weight:900;letter-spacing:.17em;text-transform:uppercase}.money-value{display:block;margin:7px 0 15px;font:500 24px/1 "Libre Caslon Display",Georgia,serif}.money-value:last-child{margin-bottom:0}
+.transfer-full-link{display:inline-flex;margin-top:14px;color:var(--burgundy);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.transfer-empty{padding:14px 0;color:#5f6879;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.not-found{max-width:680px;padding:64px clamp(28px,4vw,70px)}
+footer{background:#020936;color:#f1ece2;padding:74px 0 0;overflow:hidden}.tops-pattern{overflow:hidden}.tops-pattern-track{display:flex;align-items:center;gap:76px;width:max-content;animation:topsMarquee 24s linear infinite}.tops-pattern-item{display:flex;align-items:center;gap:.16em;white-space:nowrap;color:#f1ece2;font:italic clamp(128px,13.8vw,228px)/.78 Georgia,serif;letter-spacing:-.065em;text-transform:uppercase}.tops-pattern-item img{width:.86em;height:.86em;object-fit:contain;display:block;transform:translateY(-.015em)}@keyframes topsMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:1180px){.profile-grid{grid-template-columns:1fr}.portrait-card{position:relative;top:auto;min-height:560px}.portrait-card img{height:96%}.info-row{grid-template-columns:1fr}}
+@media(max-width:780px){.rail{display:none}.page{margin-left:0}.profile{padding:26px 18px 66px}.profile-head{grid-template-columns:auto 1fr;padding:24px 20px;gap:16px}.profile-name{font-size:44px}.title-facts{grid-column:1/-1;justify-self:start}.title-fact b{font-size:14px}.title-age b{font-size:20px}.portrait-card{min-height:470px}.career-card,.season-block{padding:22px 18px}.career-stats{grid-template-columns:repeat(2,1fr)}.career-stat:nth-child(odd){border-left:0}.career-stat:nth-child(n+3){border-top:1px solid #101f3a24}.season-table{min-width:680px}.season-scroll{overflow-x:auto}.facts-card{grid-template-columns:1fr}.fact{border-left:0;border-top:1px solid #101f3a1c;padding:16px 0}.fact:first-child{border-top:0}.transfer-layout{grid-template-columns:1fr;justify-items:center;text-align:center}.transfer-money{border-left:0;border-top:1px solid #101f3a24;padding:18px 0 0;width:100%}}
