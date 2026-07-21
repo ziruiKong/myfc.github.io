@@ -22,8 +22,9 @@ a{color:inherit;text-decoration:none}
 .portrait-card img{position:absolute;z-index:1;left:0;right:0;bottom:0;width:100%;height:92%;object-fit:contain;object-position:center bottom}
 .content-panel{display:grid;gap:26px}
 .panel{background:#fffaf2b8;border:1px solid #fff;box-shadow:0 16px 34px #101f3a12, inset 0 0 0 1px #101f3a12;border-radius:6px}
-.panel-title{margin:0 0 22px;color:var(--burgundy);font-size:15px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
-.panel-title:after{content:"";display:block;width:28px;height:2px;background:var(--burgundy);margin-top:10px}
+.panel-title{display:flex;align-items:center;gap:12px;margin:0 0 22px;color:var(--burgundy);font-size:12px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;white-space:nowrap}
+.panel-title:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #c6a35b24}
+.panel-title:after{content:"";display:block;flex:1;height:1px;min-width:28px;background:linear-gradient(90deg,#6f1f2c4d,#101f3a12)}
 .career-card{padding:28px 36px}
 .career-stats{display:grid;grid-template-columns:repeat(4,1fr)}
 .career-stat{min-height:116px;display:grid;place-items:center;text-align:center;border-left:1px solid #101f3a24}

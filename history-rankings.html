@@ -26,7 +26,7 @@
     .team-header{position:relative;min-height:300px;padding:56px 0 0;background:linear-gradient(90deg,rgba(2,9,54,.50),rgba(2,9,54,.10)),url('assets/first-team-header.webp') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between}
     .team-header:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,9,54,.08),rgba(2,9,54,.38));pointer-events:none}.team-heading{position:relative;z-index:1;padding:0 clamp(28px,4vw,64px) 42px}
     h1{font:italic 800 clamp(54px,6.8vw,108px)/.82 "Libre Caslon Display",Georgia,serif;margin:0;color:#f1ece2;letter-spacing:-.055em}h1 span{display:block}
-    .tabs{--tab-radius:24px;position:relative;z-index:2;width:min(1180px,calc(100% - clamp(56px,10vw,160px)));margin:0 auto -34px;min-height:72px;background:#f8f5ee;border:1px solid #c6a35b70;border-bottom:0;border-radius:var(--tab-radius) var(--tab-radius) 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:start;padding:8px;color:var(--navy);box-shadow:0 -1px 0 #ffffffb0 inset,0 -12px 28px #02093622}
+    .tabs{--tab-radius:24px;position:relative;z-index:2;width:min(1280px,calc(100% - clamp(56px,10vw,160px)));margin:0 auto -34px;min-height:72px;background:#f8f5ee;border:1px solid #c6a35b70;border-bottom:0;border-radius:var(--tab-radius) var(--tab-radius) 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:start;padding:8px;color:var(--navy);box-shadow:0 -1px 0 #ffffffb0 inset,0 -12px 28px #02093622}
     .tabs a{height:54px;display:grid;place-items:center;border-radius:16px;border:1px solid transparent;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.15em;text-align:center;color:var(--navy);transition:background .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease}.tabs a:hover{border-color:#6f1f2c2e;background:#efe7dc;color:var(--burgundy)}.tabs a.active{background:var(--burgundy);border-color:#c6a35b80;color:#f8f5ee;box-shadow:0 12px 22px #101f3a24}
     .rankings{padding:88px clamp(24px,4vw,64px) 90px;background:linear-gradient(180deg,#f1ece2 0%,#f8f5ee 42%,#f1ece2 100%)}
     .record-toolbar{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:end;background:#f8f5ee;border:1px solid #101f3a18;padding:30px;margin-bottom:24px;box-shadow:0 14px 34px #101f3a0c}
@@ -46,7 +46,7 @@
   </aside>
   <aside class="rail-submenu" aria-hidden="true"><p class="rail-submenu-kicker">Teams</p><ul class="rail-submenu-list"></ul></aside>
   <main class="page">
-    <header class="team-header"><div class="team-heading"><h1><span>MEN'S</span><span>FIRST TEAM</span></h1></div><nav class="tabs"><a href="mens-first-team.html#squad">Squad</a><a href="mens-first-team.html#stats">Statistics</a><a class="active" href="history-rankings.html">History Rankings</a><a href="transfer-history.html">Transfers</a><a href="predecessor-players.html">Predecessor</a></nav></header>
+    <header class="team-header"><div class="team-heading"><h1><span>MEN'S</span><span>FIRST TEAM</span></h1></div><nav class="tabs"><a href="mens-first-team.html#squad">Squad</a><a class="active" href="history-rankings.html">History Rankings</a><a href="squad-finance.html">Finance</a><a href="transfer-history.html">Transfers</a><a href="predecessor-players.html">Predecessor</a></nav></header>
     <section class="rankings">
       <div class="record-toolbar">
         <div class="record-copy"><p>Club Records</p><h2>Goals, Assists &amp; Appearances</h2></div>
@@ -62,7 +62,20 @@
   <script>
     const currentPlayers = (window.TOPS_PLAYER_DATA || []).map((player) => ({ ...player, archiveType: "current" }));
     const predecessorPlayers = (window.TOPS_PREDECESSOR_PLAYER_DATA || []).map((player) => ({ ...player, archiveType: "predecessor" }));
-    const players = [...currentPlayers, ...predecessorPlayers];
+    const playerKey = (player) => (player.id || player.name || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const statTotal = (player) => (player.seasonStats || []).reduce((sum, row) => sum + Number(row.appearances || 0) + Number(row.goals || 0) + Number(row.assists || 0), 0);
+    const preferredPlayer = (current, next) => {
+      if (!current) return next;
+      if (next.archiveType === "predecessor" && current.archiveType !== "predecessor") return next;
+      if (next.archiveType === current.archiveType && statTotal(next) > statTotal(current)) return next;
+      return current;
+    };
+    const players = [...currentPlayers, ...predecessorPlayers].reduce((map, player) => {
+      const key = playerKey(player);
+      map.set(key, preferredPlayer(map.get(key), player));
+      return map;
+    }, new Map()).values();
+    const allPlayers = [...players];
     const seasonFilter = document.querySelector('[data-season-filter]');
     const competitionFilter = document.querySelector('[data-competition-filter]');
     const grid = document.querySelector('[data-ranking-grid]');
@@ -72,8 +85,8 @@
       { key: "appearances", title: "All-Time Appearances", unit: "Apps" }
     ];
     const statRowsFor = (player) => player.seasonStats?.length ? player.seasonStats : [{ season: "Unlisted", competition: "All competitions", ...player.stats }];
-    const seasons = [...new Set(players.flatMap((player) => statRowsFor(player).map((row) => row.season).filter(Boolean)))].sort().reverse();
-    const competitions = [...new Set(players.flatMap((player) => statRowsFor(player).map((row) => row.competition).filter(Boolean)))].sort();
+    const seasons = [...new Set(allPlayers.flatMap((player) => statRowsFor(player).map((row) => row.season).filter(Boolean)))].sort().reverse();
+    const competitions = [...new Set(allPlayers.flatMap((player) => statRowsFor(player).map((row) => row.competition).filter(Boolean)))].sort();
     const setOptions = (select, options) => {
       select.innerHTML = options.map((item) => `<option value="${item.value}">${item.label}</option>`).join('');
     };
@@ -93,7 +106,7 @@
       const value = filteredRowsFor(player).reduce((sum, row) => sum + Number(row[metric] ?? 0), 0);
       return { player, value };
     };
-    const buildRanking = (metric) => players
+    const buildRanking = (metric) => allPlayers
       .map((player) => aggregatePlayer(player, metric.key))
       .filter((entry) => entry.value > 0)
       .sort((a, b) => b.value - a.value || a.player.name.localeCompare(b.player.name))
@@ -135,7 +148,7 @@
     let submenuCloseTimer;
     const submenuItems = {
       matches: ['Fixtures', 'Results', 'Tables', 'Match centre', 'Borough Cup'],
-      teams: [{ label: "Men's First Team", href: 'mens-first-team.html' }, { label: "History Rankings", href: 'history-rankings.html' }, { label: "Transfer History", href: 'transfer-history.html' }, { label: "Predecessor Players", href: 'predecessor-players.html' }, "Women's First Team", "Men's U21", "Women's U19", "Men's U18"],
+      teams: [{ label: "Men's First Team", href: 'mens-first-team.html' }, { label: "History Rankings", href: 'history-rankings.html' }, { label: "Squad Finance", href: 'squad-finance.html' }, { label: "Transfer History", href: 'transfer-history.html' }, { label: "Predecessor Players", href: 'predecessor-players.html' }, "Women's First Team", "Men's U21", "Women's U19", "Men's U18"],
       tickets: ['Home tickets', 'Away tickets', 'Premium', 'Season tickets', 'Ticket exchange'],
       membership: ['Join TOPS', 'Renew membership', 'Member benefits', 'Ticket access', 'Account'],
       shop: ['Home kit', 'Away kit', 'Training wear', 'Lifestyle', 'Accessories'],

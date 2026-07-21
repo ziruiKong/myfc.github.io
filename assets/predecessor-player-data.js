@@ -57,7 +57,7 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
       }
     ],
     "flag": "assets/ar_1x1.svg",
-    "photo": "assets/marcos-senesi.webp"
+    "photo": "assets/marcos-senesi.png"
   },
   {
     "id": "david-affengruber",
@@ -443,5 +443,255 @@ window.TOPS_PREDECESSOR_PLAYER_DATA = [
     "specificPosition": "CB",
     "flag": "assets/nl_1x1.svg",
     "photo": "assets/micky-van-de-ven.webp"
+  },
+  {
+    "id": "sven-botman",
+    "number": "2",
+    "name": "Sven Botman",
+    "position": "Defender",
+    "positionShort": "DEF",
+    "nationality": "Netherlands",
+    "seasons": "2027/28",
+    "stats": {
+      "appearances": 43,
+      "goals": 1,
+      "assists": 0,
+      "averageRating": "6.84",
+      "goalContributions": 1,
+      "cleanSheets": 11,
+      "yellowCards": 2,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2027/28",
+        "appearances": 43,
+        "goals": 1,
+        "assists": 0,
+        "goalContributions": 1,
+        "cleanSheets": 11,
+        "yellowCards": 2,
+        "redCards": 0,
+        "averageRating": "6.84",
+        "ratedApps": 43
+      }
+    ],
+    "specificPosition": "CB",
+    "flag": "assets/nl_1x1.svg",
+    "photo": "assets/sven-botman.webp"
+  },
+  {
+    "id": "ben-white",
+    "number": "3",
+    "name": "Ben White",
+    "position": "Defender",
+    "positionShort": "DEF",
+    "nationality": "England",
+    "seasons": "2027/28, 2026/27, 2025/26",
+    "stats": {
+      "appearances": 54,
+      "goals": 0,
+      "assists": 0,
+      "averageRating": "7.04",
+      "goalContributions": 0,
+      "cleanSheets": 22,
+      "yellowCards": 3,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2027/28",
+        "appearances": 54,
+        "goals": 0,
+        "assists": 0,
+        "goalContributions": 0,
+        "cleanSheets": 22,
+        "yellowCards": 3,
+        "redCards": 0,
+        "averageRating": "7.04",
+        "ratedApps": 54
+      },
+      {
+        "season": "2026/27",
+        "appearances": 54,
+        "goals": 4,
+        "assists": 1,
+        "goalContributions": 5,
+        "cleanSheets": 15,
+        "averageRating": "7.15",
+        "ratedApps": 54
+      },
+      {
+        "season": "2025/26",
+        "appearances": 41,
+        "goals": 3,
+        "assists": 0,
+        "goalContributions": 3,
+        "averageRating": "6.58",
+        "ratedApps": 41,
+        "clearances": 11
+      }
+    ],
+    "specificPosition": "RB / CB / RM",
+    "flag": "assets/gb-eng.svg",
+    "photo": "assets/ben-white.webp"
+  },
+  {
+    "id": "jesus-rodriguez",
+    "number": "11",
+    "name": "Jesus Rodriguez",
+    "position": "Forward",
+    "positionShort": "FWD",
+    "nationality": "Spain",
+    "seasons": "2027/28, 2026/27",
+    "stats": {
+      "appearances": 17,
+      "goals": 4,
+      "assists": 7,
+      "averageRating": "7.38",
+      "goalContributions": 11,
+      "cleanSheets": 5,
+      "yellowCards": 1,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2027/28",
+        "appearances": 17,
+        "goals": 4,
+        "assists": 7,
+        "goalContributions": 11,
+        "cleanSheets": 5,
+        "yellowCards": 1,
+        "redCards": 0,
+        "averageRating": "7.38",
+        "ratedApps": 17
+      },
+      {
+        "season": "2026/27",
+        "appearances": 29,
+        "goals": 3,
+        "assists": 6,
+        "goalContributions": 9,
+        "cleanSheets": 6,
+        "averageRating": "6.95",
+        "ratedApps": 29
+      }
+    ],
+    "specificPosition": "LM / LW",
+    "flag": "assets/es_1x1.svg",
+    "photo": "assets/jesus-rodriguez.webp"
+  },
+  {
+    "id": "toni-fruk",
+    "number": "14",
+    "name": "Toni Fruk",
+    "position": "Forward",
+    "positionShort": "FWD",
+    "nationality": "Croatia",
+    "seasons": "2027/28, 2026/27, 2025/26",
+    "stats": {
+      "appearances": 33,
+      "goals": 10,
+      "assists": 9,
+      "averageRating": "7.35",
+      "goalContributions": 19,
+      "cleanSheets": 7,
+      "yellowCards": 1,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2027/28",
+        "appearances": 33,
+        "goals": 10,
+        "assists": 9,
+        "goalContributions": 19,
+        "cleanSheets": 7,
+        "yellowCards": 1,
+        "redCards": 0,
+        "averageRating": "7.35",
+        "ratedApps": 33
+      },
+      {
+        "season": "2026/27",
+        "appearances": 44,
+        "goals": 20,
+        "assists": 11,
+        "goalContributions": 31,
+        "cleanSheets": 10,
+        "averageRating": "7.66",
+        "ratedApps": 44
+      },
+      {
+        "season": "2025/26",
+        "appearances": 29,
+        "goals": 7,
+        "assists": 6,
+        "goalContributions": 13,
+        "averageRating": "6.64",
+        "ratedApps": 29,
+        "clearances": 6
+      }
+    ],
+    "specificPosition": "ST / CAM",
+    "flag": "assets/hr_1x1.svg",
+    "photo": "assets/toni-fruk.png"
+  },
+  {
+    "id": "maximo-perrone",
+    "number": "23",
+    "name": "Maximo Perrone",
+    "position": "Midfielder",
+    "positionShort": "MID",
+    "nationality": "Argentina",
+    "seasons": "2027/28, 2026/27, 2025/26",
+    "stats": {
+      "appearances": 40,
+      "goals": 2,
+      "assists": 6,
+      "averageRating": "6.95",
+      "goalContributions": 8,
+      "cleanSheets": 11,
+      "yellowCards": 0,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2027/28",
+        "appearances": 40,
+        "goals": 2,
+        "assists": 6,
+        "goalContributions": 8,
+        "cleanSheets": 11,
+        "yellowCards": 0,
+        "redCards": 0,
+        "averageRating": "6.95",
+        "ratedApps": 40
+      },
+      {
+        "season": "2026/27",
+        "appearances": 55,
+        "goals": 4,
+        "assists": 5,
+        "goalContributions": 9,
+        "cleanSheets": 9,
+        "averageRating": "6.95",
+        "ratedApps": 55
+      },
+      {
+        "season": "2025/26",
+        "appearances": 28,
+        "goals": 0,
+        "assists": 2,
+        "goalContributions": 2,
+        "averageRating": "6.58",
+        "ratedApps": 28,
+        "clearances": 4
+      }
+    ],
+    "specificPosition": "CDM / CM",
+    "flag": "assets/ar_1x1.svg",
+    "photo": "assets/maximo-perrone.webp?v=2"
   }
 ];

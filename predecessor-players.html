@@ -18,11 +18,14 @@
     .rail nav{display:flex;flex-direction:column;gap:18px;padding:0 24px;color:var(--warm);font:700 22px/1.06 "Libre Caslon Display",Georgia,serif;letter-spacing:-.025em}
     .rail nav a:hover,.rail nav a.active{color:var(--gold)}
     .page{margin-left:200px;min-height:100vh}
-    .hero{padding:58px clamp(28px,4vw,70px) 34px;background:linear-gradient(90deg,rgba(16,31,58,.82),rgba(16,31,58,.45)),url('assets/first-team-header.webp') center/cover;color:var(--warm)}
-    .back-link{display:inline-flex;align-items:center;gap:10px;margin-bottom:38px;color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
-    .hero h1{max-width:900px;font:800 clamp(56px,7vw,108px)/.82 "Libre Caslon Display",Georgia,serif;margin:0;letter-spacing:-.055em}
-    .hero p{max-width:680px;margin:22px 0 0;font-size:17px;line-height:1.55;color:#f1ece2d8}
-    .toolbar{display:grid;grid-template-columns:minmax(220px,360px) auto 1fr;gap:14px;align-items:center;padding:28px clamp(28px,4vw,70px);border-bottom:1px solid var(--line)}
+    .team-header{position:relative;min-height:300px;padding:56px 0 0;background:linear-gradient(90deg,rgba(2,9,54,.50),rgba(2,9,54,.10)),url('assets/first-team-header.webp') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between}
+    .team-header:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,9,54,.08),rgba(2,9,54,.38));pointer-events:none}
+    .team-heading{position:relative;z-index:1;padding:0 clamp(28px,4vw,64px) 42px}
+    .team-heading h1{font:italic 800 clamp(54px,6.8vw,108px)/.82 "Libre Caslon Display",Georgia,serif;margin:0;color:#f1ece2;letter-spacing:-.055em}.team-heading h1 span{display:block}
+    .tabs{--tab-radius:24px;position:relative;z-index:2;width:min(1280px,calc(100% - clamp(56px,10vw,160px)));margin:0 auto -34px;min-height:72px;background:#f8f5ee;border:1px solid #c6a35b70;border-bottom:0;border-radius:var(--tab-radius) var(--tab-radius) 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:start;padding:8px;color:var(--navy);box-shadow:0 -1px 0 #ffffffb0 inset,0 -12px 28px #02093622}
+    .tabs a{height:54px;display:grid;place-items:center;border-radius:16px;border:1px solid transparent;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.15em;text-align:center;color:var(--navy);transition:background .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease}
+    .tabs a:hover{border-color:#6f1f2c2e;background:#efe7dc;color:var(--burgundy)}.tabs a.active{background:var(--burgundy);border-color:#c6a35b80;color:#f8f5ee;box-shadow:0 12px 22px #101f3a24}
+    .toolbar{display:grid;grid-template-columns:minmax(220px,360px) auto 1fr;gap:14px;align-items:center;padding:88px clamp(28px,4vw,70px) 28px;border-bottom:1px solid var(--line)}
     .search,.filter{height:46px;border:1px solid #101f3a26;background:#fff;color:var(--navy);border-radius:6px;padding:0 15px;font-weight:700}
     .filter{appearance:none;min-width:170px;padding-right:40px;background:#fff linear-gradient(45deg,transparent 50%,var(--navy) 50%),linear-gradient(135deg,var(--navy) 50%,transparent 50%);background-position:calc(100% - 22px) 19px,calc(100% - 16px) 19px;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
     .count{text-align:right;color:#101f3a9a;font-weight:800}
@@ -39,7 +42,7 @@
     .name-row{display:flex;align-items:center;justify-content:space-between;gap:14px}.name-row b{display:block;min-width:0;font:800 32px/.88 "Libre Caslon Display",Georgia,serif;color:var(--navy);letter-spacing:-.045em}.card-flag{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:#f8f5ee;border:1px solid #101f3a24;padding:4px;box-shadow:0 8px 18px #101f3a16}.card-flag img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}.archive-info>span{display:block;margin-top:11px;color:#101f3a9a;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
     .is-hidden{display:none}
     footer{background:#020936;color:#f1ece2;padding:74px 0 0;overflow:hidden}.tops-pattern{overflow:hidden}.tops-pattern-track{display:flex;align-items:center;gap:76px;width:max-content;animation:topsMarquee 24s linear infinite}.tops-pattern-item{display:flex;align-items:center;gap:.16em;white-space:nowrap;color:#f1ece2;font:italic clamp(128px,13.8vw,228px)/.78 Georgia,serif;letter-spacing:-.065em;text-transform:uppercase}.tops-pattern-item img{width:.86em;height:.86em;object-fit:contain;display:block;transform:translateY(-.015em)}@keyframes topsMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    @media(max-width:1280px){.player-grid{grid-template-columns:repeat(3,minmax(230px,1fr))}}@media(max-width:960px){.player-grid{grid-template-columns:repeat(2,minmax(230px,1fr))}.toolbar{grid-template-columns:1fr 1fr}.count{text-align:left}}@media(max-width:760px){.rail{display:none}.page{margin-left:0}.toolbar{grid-template-columns:1fr}.player-grid{grid-template-columns:1fr}.count{text-align:left}}
+    @media(max-width:1280px){.player-grid{grid-template-columns:repeat(3,minmax(230px,1fr))}}@media(max-width:960px){.player-grid{grid-template-columns:repeat(2,minmax(230px,1fr))}.toolbar{grid-template-columns:1fr 1fr}.count{text-align:left}}@media(max-width:760px){.rail{display:none}.page{margin-left:0}.tabs{width:calc(100% - 24px);grid-template-columns:repeat(2,1fr);border-radius:24px 24px 0 0}.toolbar{grid-template-columns:1fr;padding:70px 12px 22px}.archive{padding-left:12px;padding-right:12px}.player-grid{grid-template-columns:1fr}.count{text-align:left}}
   </style>
 </head>
 <body>
@@ -48,11 +51,7 @@
     <nav><a href="index.html#fixtures">Matches</a><a class="active" href="mens-first-team.html">Teams</a><a href="index.html#tickets">Tickets</a><a href="index.html#membership">Membership</a><a href="index.html#shop">Shop IFC</a><a href="index.html#play">IFC PLAY</a><a href="index.html#club">The Club</a><a href="index.html#latest">Explore</a></nav>
   </aside>
   <main class="page">
-    <header class="hero">
-      <a class="back-link" href="mens-first-team.html">Back to current squad</a>
-      <h1>PREDECESSOR PLAYERS</h1>
-      <p>Club archive records for players who featured in the 2025/26 all-competitions data and are no longer listed in the current men's first team squad.</p>
-    </header>
+    <header class="team-header"><div class="team-heading"><h1><span>PREDECESSOR</span><span>PLAYERS</span></h1></div><nav class="tabs"><a href="mens-first-team.html#squad">Squad</a><a href="history-rankings.html">History Rankings</a><a href="squad-finance.html">Finance</a><a href="transfer-history.html">Transfers</a><a class="active" href="predecessor-players.html">Predecessor</a></nav></header>
     <div class="toolbar">
       <input class="search" type="search" placeholder="Search players" data-search>
       <select class="filter" data-position-filter aria-label="Filter by position">
@@ -82,7 +81,7 @@
         <article class="archive-card">
           ${player.photo ? `<img src="${player.photo}" alt="${player.name}">` : ''}
           <div class="card-top"><span class="pill">${player.positionShort}</span></div>
-          <div class="archive-info"><div class="name-row"><b>${player.name}</b>${player.flag ? `<span class="card-flag"><img src="${player.flag}" alt="${player.nationality}"></span>` : ''}</div><span>${player.nationality} / ${player.seasons}</span></div>
+          <div class="archive-info"><div class="name-row"><b>${player.name}</b>${player.flag ? `<span class="card-flag"><img src="${player.flag}" alt="${player.nationality}"></span>` : ''}</div><span>${player.seasons}</span></div>
         </article>
       </a>
     `).join('');

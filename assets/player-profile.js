@@ -6,13 +6,14 @@
   const detail = document.querySelector("#player-profile");
   const notFound = document.querySelector("#player-not-found");
 
-  const euro = (value) => String(value ?? "").replace(/EUR/g, "&euro;");
+  const euro = (value) => String(value ?? "").replace(/EUR/g, "&euro;").replace(/\$/g, "&euro;");
   const number = (value) => Number(value ?? 0);
   const initials = (name) => String(name || "TOPS").replace(/\([^)]*\)/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
   const position = (item) => item.specificPosition || item.position || "--";
   const statFourth = (item) => item.positionShort === "GKP" || position(item).includes("GK") ? "Clean Sheets" : "Clearances";
   const statFourthKey = (item) => statFourth(item) === "Clean Sheets" ? "cleanSheets" : "clearances";
   const birthDate = (item) => item.birthDate || item.dateOfBirth || item.dob || "";
+  const displayClubName = (name) => String(name || "").replace(/\s+F\.?C\.?$/i, "").trim();
   const clubLogos = {
     "arsenal": "assets/club-arsenal.webp",
     "as roma": "assets/club-as-roma.svg",
@@ -31,14 +32,22 @@
     "leeds": "assets/club-leeds.webp",
     "liverpool": "assets/club-liverpool.webp",
     "inter": "assets/club-inter-milan.svg",
+    "inter milan": "assets/club-inter-milan.svg",
     "man city": "assets/club-manchester-city.webp",
     "manchester city": "assets/club-manchester-city.webp",
     "manchester united": "assets/club-manchester-united.webp",
+    "napoli": "assets/club-napoli.svg",
     "newcastle": "assets/club-newcastle.webp",
     "nottingham forest": "assets/club-nottingham-forest.webp",
-    "spurs": "assets/club-spurs.webp",
+    "paris saint-germain": "assets/club-psg.svg",
+    "paris saint germain": "assets/club-psg.svg",
+    "psg": "assets/club-psg.svg",
+    "real madrid": "assets/club-real-madrid.svg",
+    "spurs": "assets/club-tottenham-hotspur.webp",
     "sunderland": "assets/club-sunderland.webp",
-    "tottenham": "assets/club-spurs.webp",
+    "tottenham": "assets/club-tottenham-hotspur.webp",
+    "tottenham hotspur": "assets/club-tottenham-hotspur.webp",
+    "vfb stuttgart": "assets/club-vfb-stuttgart.svg",
     "west ham": "assets/club-west-ham.webp",
     "wolves": "assets/club-wolves.webp"
   };
@@ -85,10 +94,11 @@
   }
 
   function clubToken(name) {
-    const normalized = String(name || "").toLowerCase().replace(/\s*\([^)]*\)/g, "").trim();
+    const normalized = String(name || "").toLowerCase().replace(/\s*\([^)]*\)/g, "").replace(/\bf\.?c\.?\b/g, "").replace(/\s+/g, " ").trim();
     const isIslington = normalized.includes("islington");
     const logo = isIslington ? "assets/islington-official-crest.webp" : clubLogos[normalized];
-    return `<div class="club-token"><span class="club-logo">${logo ? `<img src="${logo}" alt="">` : initials(name)}</span><span>${name}</span></div>`;
+    const displayName = displayClubName(name);
+    return `<div class="club-token"><span class="club-logo">${logo ? `<img src="${logo}" alt="">` : initials(displayName)}</span><span>${displayName}</span></div>`;
   }
 
   function renderTransfer(record) {
@@ -112,17 +122,17 @@
     if (!records.length) {
       return `
         <section class="transfer-section panel">
-          <p class="panel-title">Transfer History</p>
-          <div class="transfer-empty">No transfer record has been added for this player yet.</div>
-          <a class="transfer-full-link" href="transfer-history.html">View full transfer history &rsaquo;</a>
+          <p class="panel-title" title="Transfer History">Moves</p>
+          <div class="transfer-empty">No records yet.</div>
+          <a class="transfer-full-link" href="transfer-history.html">Full history &rsaquo;</a>
         </section>
       `;
     }
     return `
       <section class="transfer-section panel">
-        <p class="panel-title">Transfer History</p>
+        <p class="panel-title" title="Transfer History">Moves</p>
         <div class="transfer-stack">${records.map(renderTransfer).join("")}</div>
-        <a class="transfer-full-link" href="transfer-history.html">View full transfer history &rsaquo;</a>
+        <a class="transfer-full-link" href="transfer-history.html">Full history &rsaquo;</a>
       </section>
     `;
   }
@@ -147,7 +157,7 @@
   const playerAge = config.isArchive ? "" : (player.age || "");
   const titleFacts = [
     player.nationality ? `<span class="title-fact">${player.flag ? `<img src="${player.flag}" alt="">` : ""}<b>${player.nationality}</b></span>` : "",
-    player.position ? `<span class="title-fact"><b>${player.position}</b></span>` : "",
+    position(player) ? `<span class="title-fact"><b>${position(player)}</b></span>` : "",
     playerAge ? `<span class="title-fact title-age"><b>${playerAge}</b>${birthDate(player) ? `<small>${birthDate(player)}</small>` : ""}</span>` : ""
   ].filter(Boolean).join("");
 
@@ -164,7 +174,7 @@
       </div>
       <div class="content-panel">
         <section class="career-card panel">
-          <p class="panel-title">${config.statsTitle || "Career Stats"}</p>
+          <p class="panel-title" title="${config.statsTitle || "Career Stats"}">Stats</p>
           <div class="career-stats">
             <div class="career-stat"><div><div class="stat-value">${totals.appearances}</div><div class="stat-label">Appearances</div></div></div>
             <div class="career-stat"><div><div class="stat-value">${totals.goals}</div><div class="stat-label">Goals</div></div></div>
@@ -173,7 +183,7 @@
           </div>
         </section>
         <section class="season-block panel">
-          <p class="panel-title">Season Statistics</p>
+          <p class="panel-title" title="Season Statistics">Seasons</p>
           <div class="season-scroll">
             <table class="season-table">
               <thead><tr><th>Season</th><th>Apps</th><th>Goals</th><th>Assists</th><th>${statFourth(player)}</th><th>Avg Rating</th></tr></thead>

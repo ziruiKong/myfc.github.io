@@ -8,7 +8,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Italy",
     "flag": "assets/it_1x1.svg",
     "photo": "assets/guglielmo-vicario.webp",
-    "age": "29",
+    "age": "31",
     "stats": {
       "appearances": 54,
       "goals": 0,
@@ -53,7 +53,88 @@ window.TOPS_PLAYER_DATA = [
         "clearances": 13
       }
     ],
-    "specificPosition": "GK"
+    "specificPosition": "GK",
+    "weeklyWage": "EUR130,000",
+    "annualSalary": "EUR7.0m",
+    "marketValue": "EUR50.0m"
+  },
+  {
+    "id": "jarrad-branthwaite",
+    "number": "2",
+    "name": "Jarrad Branthwaite",
+    "position": "Defender",
+    "positionShort": "DEF",
+    "nationality": "England",
+    "flag": "assets/gb-eng.svg",
+    "photo": "assets/jarrad-branthwaite.png",
+    "stats": {
+      "appearances": 0,
+      "goals": 0,
+      "assists": 0,
+      "averageRating": "0.00",
+      "goalContributions": 0,
+      "clearances": 0,
+      "yellowCards": 0,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2028/29",
+        "appearances": 0,
+        "goals": 0,
+        "assists": 0,
+        "goalContributions": 0,
+        "clearances": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "averageRating": "0.00",
+        "ratedApps": 0
+      }
+    ],
+    "specificPosition": "CB",
+    "age": "26",
+    "weeklyWage": "EUR140,000",
+    "annualSalary": "EUR7.5m",
+    "marketValue": "EUR45.0m"
+  },
+  {
+    "id": "alessandro-bastoni",
+    "number": "3",
+    "name": "Alessandro Bastoni",
+    "position": "Defender",
+    "positionShort": "DEF",
+    "nationality": "Italy",
+    "flag": "assets/it_1x1.svg",
+    "photo": "assets/alessandro-bastoni.png",
+    "stats": {
+      "appearances": 0,
+      "goals": 0,
+      "assists": 0,
+      "averageRating": "0.00",
+      "goalContributions": 0,
+      "clearances": 0,
+      "yellowCards": 0,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2028/29",
+        "appearances": 0,
+        "goals": 0,
+        "assists": 0,
+        "goalContributions": 0,
+        "clearances": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "averageRating": "0.00",
+        "ratedApps": 0
+      }
+    ],
+    "specificPosition": "CB",
+    "age": "29",
+    "weeklyWage": "EUR235,000",
+    "annualSalary": "EUR12.5m",
+    "marketValue": "EUR89.5m"
   },
   {
     "id": "sven-botman",
@@ -157,7 +238,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
     "photo": "assets/tino-livramento.webp",
-    "age": "24",
+    "age": "25",
     "stats": {
       "appearances": 58,
       "goals": 2,
@@ -202,7 +283,10 @@ window.TOPS_PLAYER_DATA = [
         "clearances": 14
       }
     ],
-    "specificPosition": "RB / RWB"
+    "specificPosition": "RB",
+    "weeklyWage": "EUR195,000",
+    "annualSalary": "EUR10.0m",
+    "marketValue": "EUR116.5m"
   },
   {
     "id": "pau-cubarsi",
@@ -213,7 +297,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
     "photo": "assets/pau-cubarsi.webp",
-    "age": "20",
+    "age": "21",
     "stats": {
       "appearances": 42,
       "goals": 2,
@@ -238,7 +322,10 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 42
       }
     ],
-    "specificPosition": "CB"
+    "specificPosition": "CB",
+    "weeklyWage": "EUR130,000",
+    "annualSalary": "EUR7.0m",
+    "marketValue": "EUR85.0m"
   },
   {
     "id": "marcel-ruiz",
@@ -249,7 +336,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Mexico",
     "flag": "assets/mx_1x1.svg",
     "photo": "assets/marcel-ruiz.webp",
-    "age": "26",
+    "age": "27",
     "stats": {
       "appearances": 46,
       "goals": 9,
@@ -294,7 +381,10 @@ window.TOPS_PLAYER_DATA = [
         "clearances": 14
       }
     ],
-    "specificPosition": "CM / CAM / CDM"
+    "specificPosition": "CM",
+    "weeklyWage": "EUR70,000",
+    "annualSalary": "EUR3.5m",
+    "marketValue": "EUR74.5m"
   },
   {
     "id": "alex-baena",
@@ -305,7 +395,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
     "photo": "assets/alex-baena.webp",
-    "age": "25",
+    "age": "27",
     "stats": {
       "appearances": 58,
       "goals": 39,
@@ -350,7 +440,10 @@ window.TOPS_PLAYER_DATA = [
         "clearances": 14
       }
     ],
-    "specificPosition": "LM / LW"
+    "specificPosition": "LM",
+    "weeklyWage": "EUR140,000",
+    "annualSalary": "EUR7.5m",
+    "marketValue": "EUR156.0m"
   },
   {
     "id": "nico-paz",
@@ -361,7 +454,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Argentina",
     "flag": "assets/ar_1x1.svg",
     "photo": "assets/nico-paz.webp",
-    "age": "22",
+    "age": "23",
     "stats": {
       "appearances": 56,
       "goals": 18,
@@ -406,7 +499,10 @@ window.TOPS_PLAYER_DATA = [
         "clearances": 13
       }
     ],
-    "specificPosition": "CAM / CM"
+    "specificPosition": "CAM",
+    "weeklyWage": "EUR90,000",
+    "annualSalary": "EUR4.5m",
+    "marketValue": "EUR152.5m"
   },
   {
     "id": "omar-marmoush",
@@ -452,7 +548,10 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 58
       }
     ],
-    "specificPosition": "LW / ST"
+    "specificPosition": "LW",
+    "weeklyWage": "EUR135,000",
+    "annualSalary": "EUR7.0m",
+    "marketValue": "EUR93.0m"
   },
   {
     "id": "ferran-torres",
@@ -463,7 +562,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
     "photo": "assets/ferran-torres.webp",
-    "age": "27",
+    "age": "28",
     "stats": {
       "appearances": 55,
       "goals": 51,
@@ -488,7 +587,49 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 55
       }
     ],
-    "specificPosition": "ST / LW / CAM"
+    "specificPosition": "ST",
+    "weeklyWage": "EUR200,000",
+    "annualSalary": "EUR10.5m",
+    "marketValue": "EUR110.5m"
+  },
+  {
+    "id": "jude-bellingham",
+    "number": "11",
+    "name": "Jude Bellingham",
+    "position": "Midfielder",
+    "positionShort": "MID",
+    "nationality": "England",
+    "flag": "assets/gb-eng.svg",
+    "photo": "assets/jude-bellingham.png",
+    "stats": {
+      "appearances": 0,
+      "goals": 0,
+      "assists": 0,
+      "averageRating": "0.00",
+      "goalContributions": 0,
+      "clearances": 0,
+      "yellowCards": 0,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2028/29",
+        "appearances": 0,
+        "goals": 0,
+        "assists": 0,
+        "goalContributions": 0,
+        "clearances": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "averageRating": "0.00",
+        "ratedApps": 0
+      }
+    ],
+    "specificPosition": "CAM",
+    "age": "25",
+    "weeklyWage": "EUR615,000",
+    "annualSalary": "EUR32.0m",
+    "marketValue": "EUR206.5m"
   },
   {
     "id": "jesus-rodriguez",
@@ -545,7 +686,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
     "photo": "assets/jose-carmona.webp",
-    "age": "25",
+    "age": "26",
     "stats": {
       "appearances": 40,
       "goals": 1,
@@ -570,7 +711,10 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 40
       }
     ],
-    "specificPosition": "CB / RB"
+    "specificPosition": "RB",
+    "weeklyWage": "EUR80,000",
+    "annualSalary": "EUR4.0m",
+    "marketValue": "EUR37.0m"
   },
   {
     "id": "luka-vuskovic",
@@ -581,7 +725,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Croatia",
     "flag": "assets/hr_1x1.svg",
     "photo": "assets/luka-vuskovic.webp?v=2",
-    "age": "20",
+    "age": "21",
     "stats": {
       "appearances": 24,
       "goals": 1,
@@ -606,7 +750,49 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 24
       }
     ],
-    "specificPosition": "CB"
+    "specificPosition": "CB",
+    "weeklyWage": "EUR70,000",
+    "annualSalary": "EUR3.5m",
+    "marketValue": "EUR39.0m"
+  },
+  {
+    "id": "romeo-vermant",
+    "number": "14",
+    "name": "Romeo Vermant",
+    "position": "Forward",
+    "positionShort": "FWD",
+    "nationality": "Belgium",
+    "flag": "assets/be_1x1.svg",
+    "photo": "assets/romeo-vermant.png",
+    "stats": {
+      "appearances": 0,
+      "goals": 0,
+      "assists": 0,
+      "averageRating": "0.00",
+      "goalContributions": 0,
+      "clearances": 0,
+      "yellowCards": 0,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2028/29",
+        "appearances": 0,
+        "goals": 0,
+        "assists": 0,
+        "goalContributions": 0,
+        "clearances": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "averageRating": "0.00",
+        "ratedApps": 0
+      }
+    ],
+    "specificPosition": "ST",
+    "age": "24",
+    "weeklyWage": "EUR110,000",
+    "annualSalary": "EUR5.5m",
+    "marketValue": "EUR33.5m"
   },
   {
     "id": "toni-fruk",
@@ -673,7 +859,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
     "photo": "assets/marc-bernal.webp",
-    "age": "20",
+    "age": "21",
     "stats": {
       "appearances": 0,
       "goals": 0,
@@ -689,7 +875,11 @@ window.TOPS_PLAYER_DATA = [
         "averageRating": "0.0",
         "loanClub": "Manchester United"
       }
-    ]
+    ],
+    "specificPosition": "CDM",
+    "weeklyWage": "EUR70,000",
+    "annualSalary": "EUR3.5m",
+    "marketValue": "EUR26.0m"
   },
   {
     "id": "archie-gray",
@@ -700,7 +890,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
     "photo": "assets/archie-gray.webp",
-    "age": "21",
+    "age": "22",
     "stats": {
       "appearances": 0,
       "goals": 0,
@@ -716,7 +906,11 @@ window.TOPS_PLAYER_DATA = [
         "averageRating": "0.0",
         "loanClub": "Manchester City"
       }
-    ]
+    ],
+    "specificPosition": "CDM",
+    "weeklyWage": "EUR70,000",
+    "annualSalary": "EUR3.5m",
+    "marketValue": "EUR66.5m"
   },
   {
     "id": "lucas-bergvall",
@@ -727,7 +921,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Sweden",
     "flag": "assets/se_circle.svg",
     "photo": "assets/lucas-bergvall.webp?v=2",
-    "age": "21",
+    "age": "22",
     "stats": {
       "appearances": 51,
       "goals": 8,
@@ -772,7 +966,10 @@ window.TOPS_PLAYER_DATA = [
         "clearances": 10
       }
     ],
-    "specificPosition": "CM / CAM / RM"
+    "specificPosition": "CM",
+    "weeklyWage": "EUR70,000",
+    "annualSalary": "EUR3.5m",
+    "marketValue": "EUR144.5m"
   },
   {
     "id": "gilberto-mora",
@@ -826,7 +1023,11 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 0,
         "averageRating": "0.0"
       }
-    ]
+    ],
+    "specificPosition": "CAM",
+    "weeklyWage": "EUR45,000",
+    "annualSalary": "EUR2.5m",
+    "marketValue": "EUR51.5m"
   },
   {
     "id": "charalampos-kostoulas",
@@ -837,7 +1038,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Greece",
     "flag": "assets/gr_1x1.svg",
     "photo": "assets/charalampos-kostoulas.webp",
-    "age": "20",
+    "age": "21",
     "stats": {
       "appearances": 0,
       "goals": 0,
@@ -853,7 +1054,11 @@ window.TOPS_PLAYER_DATA = [
         "averageRating": "0.0",
         "loanClub": "Athletic Bilbao"
       }
-    ]
+    ],
+    "specificPosition": "ST",
+    "weeklyWage": "EUR70,000",
+    "annualSalary": "EUR3.5m",
+    "marketValue": "EUR29.5m"
   },
   {
     "id": "jacopo-fazzini",
@@ -864,7 +1069,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Italy",
     "flag": "assets/it_1x1.svg",
     "photo": "assets/jacopo-fazzini.webp",
-    "age": "24",
+    "age": "25",
     "stats": {
       "appearances": 33,
       "goals": 7,
@@ -899,7 +1104,10 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 42
       }
     ],
-    "specificPosition": "CAM / CM"
+    "specificPosition": "CAM",
+    "weeklyWage": "EUR75,000",
+    "annualSalary": "EUR4.0m",
+    "marketValue": "EUR41.5m"
   },
   {
     "id": "antonito-cordero",
@@ -910,7 +1118,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
     "photo": "assets/antonito-cordero.webp",
-    "age": "22",
+    "age": "21",
     "stats": {
       "appearances": 23,
       "goals": 3,
@@ -932,7 +1140,10 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 23
       }
     ],
-    "specificPosition": "LM"
+    "specificPosition": "LM",
+    "weeklyWage": "EUR55,000",
+    "annualSalary": "EUR2.5m",
+    "marketValue": "EUR23.0m"
   },
   {
     "id": "alex-valle",
@@ -943,7 +1154,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
     "photo": "assets/alex-valle.webp",
-    "age": "23",
+    "age": "24",
     "stats": {
       "appearances": 23,
       "goals": 0,
@@ -965,7 +1176,49 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 23
       }
     ],
-    "specificPosition": "LB"
+    "specificPosition": "LB",
+    "weeklyWage": "EUR60,000",
+    "annualSalary": "EUR3.0m",
+    "marketValue": "EUR28.0m"
+  },
+  {
+    "id": "lewis-miley",
+    "number": "23",
+    "name": "Lewis Miley",
+    "position": "Midfielder",
+    "positionShort": "MID",
+    "nationality": "England",
+    "flag": "assets/gb-eng.svg",
+    "photo": "assets/lewis-miley.png",
+    "stats": {
+      "appearances": 0,
+      "goals": 0,
+      "assists": 0,
+      "averageRating": "0.00",
+      "goalContributions": 0,
+      "clearances": 0,
+      "yellowCards": 0,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2028/29",
+        "appearances": 0,
+        "goals": 0,
+        "assists": 0,
+        "goalContributions": 0,
+        "clearances": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "averageRating": "0.00",
+        "ratedApps": 0
+      }
+    ],
+    "specificPosition": "CM",
+    "age": "22",
+    "weeklyWage": "EUR105,000",
+    "annualSalary": "EUR5.5m",
+    "marketValue": "EUR39.5m"
   },
   {
     "id": "maximo-perrone",
@@ -1032,7 +1285,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Germany",
     "flag": "assets/de_1x1.svg",
     "photo": "assets/elias-baum.webp",
-    "age": "21",
+    "age": "22",
     "stats": {
       "appearances": 0,
       "goals": 0,
@@ -1047,7 +1300,11 @@ window.TOPS_PLAYER_DATA = [
         "assists": 0,
         "averageRating": "0.0"
       }
-    ]
+    ],
+    "specificPosition": "RB",
+    "weeklyWage": "EUR65,000",
+    "annualSalary": "EUR3.5m",
+    "marketValue": "EUR42.0m"
   },
   {
     "id": "cassian-wrenford",
@@ -1058,7 +1315,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
     "photo": "assets/victor-gonzalez.webp?v=3",
-    "age": "22",
+    "age": "18",
     "stats": {
       "appearances": 0,
       "goals": 0,
@@ -1074,7 +1331,11 @@ window.TOPS_PLAYER_DATA = [
         "averageRating": "0.0",
         "loanClub": "Chelsea"
       }
-    ]
+    ],
+    "specificPosition": "CB",
+    "weeklyWage": "EUR45,000",
+    "annualSalary": "EUR2.5m",
+    "marketValue": "EUR33.5m"
   },
   {
     "id": "tyler-dibling",
@@ -1085,7 +1346,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "England",
     "flag": "assets/gb-eng.svg",
     "photo": "assets/tyler-dibling.webp",
-    "age": "24",
+    "age": "22",
     "stats": {
       "appearances": 22,
       "goals": 4,
@@ -1110,7 +1371,49 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 22
       }
     ],
-    "specificPosition": "RM / CAM / RW"
+    "specificPosition": "RM",
+    "weeklyWage": "EUR80,000",
+    "annualSalary": "EUR4.5m",
+    "marketValue": "EUR40.0m"
+  },
+  {
+    "id": "desire-doue",
+    "number": "27",
+    "name": "Desire Doue",
+    "position": "Forward",
+    "positionShort": "FWD",
+    "nationality": "France",
+    "flag": "assets/fr_1x1.svg",
+    "photo": "assets/desire-doue.png",
+    "stats": {
+      "appearances": 0,
+      "goals": 0,
+      "assists": 0,
+      "averageRating": "0.00",
+      "goalContributions": 0,
+      "clearances": 0,
+      "yellowCards": 0,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2028/29",
+        "appearances": 0,
+        "goals": 0,
+        "assists": 0,
+        "goalContributions": 0,
+        "clearances": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "averageRating": "0.00",
+        "ratedApps": 0
+      }
+    ],
+    "specificPosition": "RW",
+    "age": "23",
+    "weeklyWage": "EUR230,000",
+    "annualSalary": "EUR12.0m",
+    "marketValue": "EUR152.5m"
   },
   {
     "id": "riccardo-calafiori",
@@ -1121,7 +1424,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Italy",
     "flag": "assets/it_1x1.svg",
     "photo": "assets/riccardo-calafiori.webp",
-    "age": "25",
+    "age": "26",
     "stats": {
       "appearances": 57,
       "goals": 5,
@@ -1156,7 +1459,49 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 54
       }
     ],
-    "specificPosition": "CB / LB"
+    "specificPosition": "LB",
+    "weeklyWage": "EUR130,000",
+    "annualSalary": "EUR7.0m",
+    "marketValue": "EUR75.5m"
+  },
+  {
+    "id": "josh-acheampong",
+    "number": "34",
+    "name": "Josh Acheampong",
+    "position": "Defender",
+    "positionShort": "DEF",
+    "nationality": "England",
+    "flag": "assets/gb-eng.svg",
+    "photo": "assets/josh-acheampong.png",
+    "stats": {
+      "appearances": 0,
+      "goals": 0,
+      "assists": 0,
+      "averageRating": "0.00",
+      "goalContributions": 0,
+      "clearances": 0,
+      "yellowCards": 0,
+      "redCards": 0
+    },
+    "seasonStats": [
+      {
+        "season": "2028/29",
+        "appearances": 0,
+        "goals": 0,
+        "assists": 0,
+        "goalContributions": 0,
+        "clearances": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "averageRating": "0.00",
+        "ratedApps": 0
+      }
+    ],
+    "specificPosition": "CB",
+    "age": "22",
+    "weeklyWage": "EUR105,000",
+    "annualSalary": "EUR5.5m",
+    "marketValue": "EUR38.0m"
   },
   {
     "id": "martin-zubimendi",
@@ -1167,7 +1512,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Spain",
     "flag": "assets/es_1x1.svg",
     "photo": "assets/martin-zubimendi.webp",
-    "age": "28",
+    "age": "29",
     "stats": {
       "appearances": 46,
       "goals": 8,
@@ -1192,7 +1537,10 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 46
       }
     ],
-    "specificPosition": "CDM / CM"
+    "specificPosition": "CDM",
+    "weeklyWage": "EUR195,000",
+    "annualSalary": "EUR10.0m",
+    "marketValue": "EUR100.0m"
   },
   {
     "id": "berke-ozer",
@@ -1203,7 +1551,7 @@ window.TOPS_PLAYER_DATA = [
     "nationality": "Turkey",
     "flag": "assets/tr_1x1.svg",
     "photo": "assets/berke-ozer.webp?v=3",
-    "age": "27",
+    "age": "28",
     "stats": {
       "appearances": 13,
       "goals": 0,
@@ -1238,6 +1586,9 @@ window.TOPS_PLAYER_DATA = [
         "ratedApps": 17
       }
     ],
-    "specificPosition": "GK"
+    "specificPosition": "GK",
+    "weeklyWage": "EUR70,000",
+    "annualSalary": "EUR3.5m",
+    "marketValue": "EUR19.0m"
   }
 ];
